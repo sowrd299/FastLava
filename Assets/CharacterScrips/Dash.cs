@@ -33,7 +33,7 @@ public class Dash : MonoBehaviour {
     public void dash(int distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
     {                                                                              //duration = 1 for a single frame dash
         dashDistance = distance;
-        dashWidth = 0.6f;
+        dashWidth = 0.55f;
         this.duration = duration;
         dashTimer = 0;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -127,7 +127,13 @@ public class Dash : MonoBehaviour {
         }
     }
 
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Enemy")
+            //enemy.GetComponent<Killable>().Hit();
+            print("ENEMY HIT");
 
+    }
 
 
     private float polarX(float distance, float angle)  //returns x coord of a distance in a given direction
