@@ -27,7 +27,7 @@ public class CharacterMovement : MonoBehaviour {
 			transform.Translate(translation, 0, 0);
         if(Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
         {
-            GetComponent<Dash>().dash(10,1);
+            GetComponent<Dash>().dash(5,1);
 
         }
 	}
