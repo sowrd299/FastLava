@@ -7,9 +7,9 @@ public class Rage_Bar : MonoBehaviour {
     public GameObject player;
     public Slider rage_bar;
     
-    double Calculate_Rage()
+    int Calculate_Rage()
     {
-        return 50.0;
+        return 50;
     }
 
     void Start ()

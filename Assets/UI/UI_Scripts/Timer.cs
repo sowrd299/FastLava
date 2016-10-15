@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+    public int time;
+    public Text timer;
+    // Use this for initialization
+	void Start ()
+    {
+        time = 0;
+        
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+	    
 	}
 }
