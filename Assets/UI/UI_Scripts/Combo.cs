@@ -6,11 +6,17 @@ public class Combo : MonoBehaviour {
     
     public Text combo;
     public int comboValue;
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+
+    public void AddCombo(int x)
+    {
+        comboValue += x;
+    }
+
+    void Start ()
     {
         combo.text = "";
-        comboValue = 20;
+        comboValue = 0;
 	}
 	
 	// Update is called once per frame

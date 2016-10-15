@@ -33,6 +33,5 @@ public class Rage_Bar : MonoBehaviour {
     {
         //Player's Rage Amount 
         rage_bar.value = GetRage();
-        
 	}
 }
