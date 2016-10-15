@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Combo : MonoBehaviour {
 
-    Dash dash;
     public Text combo;
     private int comboValue;
     private double timer;
@@ -22,7 +21,6 @@ public class Combo : MonoBehaviour {
     {
         combo.text = "";
         comboValue = 0;
-        dash = GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>();
         timer = 0;
 	}
 	
