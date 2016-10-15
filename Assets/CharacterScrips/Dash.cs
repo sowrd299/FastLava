@@ -51,8 +51,8 @@ public class Dash : MonoBehaviour {
         
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection),  dashSpeed * Mathf.Sin(dashDirection),0);
         print(moveVector);
-       // ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
-        //killEnemies(enemyList);
+       ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
+        killEnemies(enemyList);
     }
 
     
@@ -115,10 +115,10 @@ public class Dash : MonoBehaviour {
         {
             timeFromLastKill = Time.time;
         }
-        for (int i = 0; i < enemyList.Count; i++)
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
         {
-            print("ENEMY WAS HIT");
-            //TELL ENEMIES TO KILL THEMSELVES
+            enemy.GetComponent<Killable>().Hit();
         }
     }
 
