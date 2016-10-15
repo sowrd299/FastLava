@@ -135,7 +135,7 @@ Prefab:
     - target: {fileID: 224000012489639786, guid: c38f1946baff6554fb3c8fe03828626e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224000012489639786, guid: c38f1946baff6554fb3c8fe03828626e,
         type: 2}
@@ -284,33 +284,17 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013558315422, guid: c38f1946baff6554fb3c8fe03828626e, type: 2}
+      propertyPath: m_TagString
+      value: Combo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012932043150, guid: c38f1946baff6554fb3c8fe03828626e, type: 2}
+      propertyPath: m_TagString
+      value: Rage Bar
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c38f1946baff6554fb3c8fe03828626e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &573689608 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013558315422, guid: c38f1946baff6554fb3c8fe03828626e,
-    type: 2}
-  m_PrefabInternal: {fileID: 490004434}
---- !u!114 &573689610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 573689608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf860602cfce1a4eba3cdf1567349bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combo: {fileID: 573689611}
-  comboValue: 0
---- !u!114 &573689611 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000013590865680, guid: c38f1946baff6554fb3c8fe03828626e,
-    type: 2}
-  m_PrefabInternal: {fileID: 490004434}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1014120516
 Prefab:
   m_ObjectHideFlags: 0
@@ -353,645 +337,97 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1301936149
+--- !u!1001 &1292161068
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4000012173938248, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 4000010668109872, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 60000013633426798, guid: d0037f66cfd05f744b2ee3c56ab68cf1,
+    - target: {fileID: 60000011978485934, guid: d0037f66cfd05f744b2ee3c56ab68cf1,
         type: 2}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012893009094, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 1000012963400024, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: Lava
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012902619650, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 1000010980138376, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010023912062, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000012617987640, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000010493160302, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000011146081138, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000013057292334, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000013612199596, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000012022457320, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000014052464626, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000010214494058, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000014088385078, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: EnemyStart
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: 1000012013045338, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
       value: PlayerStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011839156706, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: PlayerStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012843059784, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: PlayerStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012051649092, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011406675070, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013454964290, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010082529110, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013205611806, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012240546350, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013691613414, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013189828256, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000014188881564, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010501653540, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-      propertyPath: m_TagString
-      value: EnemyStart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
@@ -1033,7 +469,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014069085168, guid: a0695294f3ef6d840b8d885d28c83c1d, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0695294f3ef6d840b8d885d28c83c1d, type: 2}

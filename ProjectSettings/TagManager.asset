@@ -8,6 +8,8 @@ TagManager:
   - EnemyStart
   - PlayerStart
   - Lava
+  - Combo
+  - Rage Bar
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 
