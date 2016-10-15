@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Combo : MonoBehaviour {
-
+    
     public Text combo;
     public int comboValue;
 	// Use this for initialization
@@ -17,5 +17,7 @@ public class Combo : MonoBehaviour {
 	void Update ()
     {
         combo.text = comboValue + " Combo";
+        if (GetComponent<Dash>().timeFromLastKill >= 1)
+            comboValue = 0;
     }
 }
