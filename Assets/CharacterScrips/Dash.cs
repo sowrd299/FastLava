@@ -7,17 +7,17 @@ public class Dash : MonoBehaviour {
     
     // Use this for initialization
     private float dashDistance;
-    private float duration;
+    private int duration;
     private float dashTimer;
     private float dashSpeed;
-    public int dashWidth;
+    public float dashWidth;
     private float dashDirection;
     private Vector3 moveVector;
     public double timeFromLastKill;
     private GameObject tempObject;
     private bool debug;
 	void Start () {
-        dash(0,0.001f); //instantiates variables
+        dash(0,1); //instantiates variables
         debug = false;
     }
 	
@@ -25,16 +25,15 @@ public class Dash : MonoBehaviour {
 	void Update () {    
 	    if(dashTimer <= duration)
         {
-            dashTimer += Time.deltaTime;
-            print(dashTimer);
-            transform.Translate(moveVector*Time.deltaTime);
+            dashTimer += 1;
+            transform.Translate(moveVector);
         } 
 	}
 
-    public void dash(int distance, float duration)        //call this to dash in a direction for a distance in a certain time.  
+    public void dash(int distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
     {                                                                              //duration = 1 for a single frame dash
         dashDistance = distance;
-        
+        dashWidth = 0.6f;
         this.duration = duration;
         dashTimer = 0;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -44,38 +43,37 @@ public class Dash : MonoBehaviour {
 
 
         dashDirection = getAngle(xDiff, yDiff);
-        if (duration > 1/60) { 
-            dashSpeed = (distance / duration)/60;
-        } else
-        {
-            dashSpeed = distance;
-        }
+        dashSpeed = dashDistance;
 
         
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection),  dashSpeed * Mathf.Sin(dashDirection),0);
-        print(moveVector);
+        
        ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
         killEnemies(enemyList);
     }
 
     
 
-    public GameObject getPolygon(int dashDistance, float dashDirection, int dashWidth)
+    public GameObject getPolygon(int dashDistance, float dashDirection, float dashWidth)
     {  //return a rectangular polygon that encompasses the entire dash movement
 
         Vector2[] pointList = new Vector2[4];
 
         //player's right side before dash, assuming facing up
         Vector2 playerLocation = transform.position;
-        pointList[0] = playerLocation + new Vector2(polarX(dashWidth, dashDirection + 90),polarY(dashWidth,dashDirection + 90));
+        pointList[0] = playerLocation + new Vector2(polarX(dashWidth, dashDirection + Mathf.PI/2),polarY(dashWidth,dashDirection + Mathf.PI / 2));
         //player's right side after dash
-        pointList[1] = pointList[0] + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
+        pointList[1] = playerLocation + new Vector2(polarX(dashWidth, dashDirection + Mathf.PI / 2), polarY(dashWidth, dashDirection + Mathf.PI / 2))
+            + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
         //player's left side after dash
-        pointList[2] = pointList[1] + new Vector2(polarX(dashWidth, dashDirection-90), polarY(dashWidth, dashDirection-90));
+        pointList[2] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - Mathf.PI / 2), polarY(dashWidth, dashDirection - Mathf.PI / 2)) 
+            + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
         //player's let side before dash
-        pointList[3] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - 90), polarY(dashWidth, dashDirection - 90));
+        pointList[3] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - Mathf.PI / 2), polarY(dashWidth, dashDirection - Mathf.PI / 2));
         tempObject = new GameObject("tempObject");
+        
         tempObject.AddComponent<PolygonCollider2D>();
+        tempObject.GetComponent<PolygonCollider2D>().pathCount = 4;
         Vector2[] line = new Vector2[2];
         line[0] = pointList[0];
         line[1] = pointList[1];
@@ -90,12 +88,11 @@ public class Dash : MonoBehaviour {
         line[1] = pointList[0];
         tempObject.GetComponent<PolygonCollider2D>().SetPath(3, line);
         
-        
         return tempObject;
 
     }
 
-    public ArrayList getCollisions(int dashDistance, float dashDirection, int dashWidth)  //return a list of all affected enemies
+    public ArrayList getCollisions(int dashDistance, float dashDirection, float dashWidth)  //return a list of all affected enemies
     {
 
         GameObject poly = getPolygon(dashDistance,dashDirection,dashWidth);
@@ -104,13 +101,16 @@ public class Dash : MonoBehaviour {
         ArrayList result = new ArrayList();
         
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        
         for(int i = 0; i < enemies.Length; i++)
         {
             if (poly.GetComponent<PolygonCollider2D>().IsTouching(enemies[i].GetComponent<Collider2D>())){
                 result.Add(enemies[i]);
+                print("ENEMY HIT");
             }  
             
         }
+        //Destroy(poly);
         return result;
 
     }
