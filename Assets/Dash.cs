@@ -12,6 +12,7 @@ public class Dash : MonoBehaviour {
     private float dashTimer;
     private float dashDirection;
     private Vector2 moveVector;
+    public double timeFromLastKill;
 	void Start () {
         dash(0, 0, 0); //instantiates variables
     }
@@ -97,6 +98,10 @@ public class Dash : MonoBehaviour {
     }
     public void killEnemies(ArrayList enemyList)
     {
+        if(enemyList.Count != 0)         //marks time from last kill for combo duration purposes
+        {
+            timeFromLastKill = Time.time;
+        }
         for (int i = 0; i < enemyList.Count; i++)
         {
             print("ENEMY WAS HIT");
