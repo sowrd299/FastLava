@@ -15,10 +15,14 @@ public class Dash : MonoBehaviour {
     private Vector3 moveVector;
     public double timeFromLastKill;
     private GameObject tempObject;
+
     private bool debug;
 	void Start () {
         dash(0,1); //instantiates variables
         debug = false;
+        tempObject = new GameObject("tempObject");
+        tempObject.AddComponent<PolygonCollider2D>();
+        tempObject.GetComponent<PolygonCollider2D>().pathCount = 4;
     }
 	
 	// Update is called once per frame
@@ -54,7 +58,7 @@ public class Dash : MonoBehaviour {
 
     
 
-    public GameObject getPolygon(int dashDistance, float dashDirection, float dashWidth)
+    public void getPolygon(int dashDistance, float dashDirection, float dashWidth)
     {  //return a rectangular polygon that encompasses the entire dash movement
 
         Vector2[] pointList = new Vector2[4];
@@ -70,10 +74,10 @@ public class Dash : MonoBehaviour {
             + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
         //player's let side before dash
         pointList[3] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - Mathf.PI / 2), polarY(dashWidth, dashDirection - Mathf.PI / 2));
-        tempObject = new GameObject("tempObject");
         
-        tempObject.AddComponent<PolygonCollider2D>();
-        tempObject.GetComponent<PolygonCollider2D>().pathCount = 4;
+        
+        
+        
         Vector2[] line = new Vector2[2];
         line[0] = pointList[0];
         line[1] = pointList[1];
@@ -88,14 +92,14 @@ public class Dash : MonoBehaviour {
         line[1] = pointList[0];
         tempObject.GetComponent<PolygonCollider2D>().SetPath(3, line);
         
-        return tempObject;
+        
 
     }
 
     public ArrayList getCollisions(int dashDistance, float dashDirection, float dashWidth)  //return a list of all affected enemies
     {
 
-        GameObject poly = getPolygon(dashDistance,dashDirection,dashWidth);
+        getPolygon(dashDistance,dashDirection,dashWidth);
 
 
         ArrayList result = new ArrayList();
@@ -104,7 +108,7 @@ public class Dash : MonoBehaviour {
         
         for(int i = 0; i < enemies.Length; i++)
         {
-            if (poly.GetComponent<PolygonCollider2D>().IsTouching(enemies[i].GetComponent<Collider2D>())){
+            if (tempObject.GetComponent<PolygonCollider2D>().IsTouching(enemies[i].GetComponent<Collider2D>())){
                 result.Add(enemies[i]);
                 print("ENEMY HIT");
             }  
@@ -129,7 +133,7 @@ public class Dash : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Enemy")
+        if (coll.gameObject.tag == "Enemy" )
             //enemy.GetComponent<Killable>().Hit();
             print("ENEMY HIT");
 
