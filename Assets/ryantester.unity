@@ -262,6 +262,28 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -15
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012498319894, guid: c38f1946baff6554fb3c8fe03828626e,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3994cd73db7fcdc4dbbe0fdc7521015f,
+        type: 3}
+    - target: {fileID: 114000013590865680, guid: c38f1946baff6554fb3c8fe03828626e,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3994cd73db7fcdc4dbbe0fdc7521015f,
+        type: 3}
+    - target: {fileID: 224000013222916148, guid: c38f1946baff6554fb3c8fe03828626e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012288784762, guid: c38f1946baff6554fb3c8fe03828626e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c38f1946baff6554fb3c8fe03828626e, type: 2}
   m_IsPrefabParent: 0
@@ -281,7 +303,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf860602cfce1a4eba3cdf1567349bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combo: {fileID: 0}
+  combo: {fileID: 573689611}
+  comboValue: 0
+--- !u!114 &573689611 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013590865680, guid: c38f1946baff6554fb3c8fe03828626e,
+    type: 2}
+  m_PrefabInternal: {fileID: 490004434}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1014120516
 Prefab:
   m_ObjectHideFlags: 0

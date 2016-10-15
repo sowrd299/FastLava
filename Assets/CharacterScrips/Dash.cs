@@ -37,7 +37,7 @@ public class Dash : MonoBehaviour {
     public void dash(int distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
     {                                                                              //duration = 1 for a single frame dash
         dashDistance = distance;
-        dashWidth = 0.55f;
+        dashWidth = 0.30f;
         this.duration = duration;
         dashTimer = 0;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -59,10 +59,8 @@ public class Dash : MonoBehaviour {
     public void getBoxCast()
     {
         RaycastHit2D[] boxCastAll;
-        boxCastAll = Physics2D.BoxCastAll(transform.position, new Vector2(3,3), Mathf.Rad2Deg*dashDirection,angle, dashDirection);
-        
-
-        print(boxCastAll.Length);
+        boxCastAll = Physics2D.BoxCastAll(transform.position, new Vector2(3,3), Mathf.Rad2Deg*dashDirection,new Vector2(Mathf.Cos(dashDirection),Mathf.Sin(dashDirection)), dashDistance);
+     
         for(int i = 0; i < boxCastAll.Length; i++)
         {
             if (boxCastAll[i].collider.gameObject.tag == "Enemy")
@@ -165,7 +163,7 @@ public class Dash : MonoBehaviour {
     }
 
     public float getAngle(float xDiff, float yDiff)  //returns the angle from a given xDiff and yDiff
-    {
+    {  //returns radian
         return (float)(System.Math.Atan2(yDiff, xDiff));
     }
 
@@ -174,6 +172,7 @@ public class Dash : MonoBehaviour {
         debug = true;
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection),0));
+        
     }
 
 
