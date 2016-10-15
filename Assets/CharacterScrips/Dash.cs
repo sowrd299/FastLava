@@ -14,7 +14,8 @@ public class Dash : MonoBehaviour {
     private float dashDirection;
     private Vector3 moveVector;
     public double timeFromLastKill;
-    
+    Combo combo;
+    Rage_Bar rage;
 
 
 	void Start () {
@@ -88,7 +89,7 @@ public class Dash : MonoBehaviour {
             if (boxCastAll[i].collider.gameObject.tag == "Enemy")
             {
                 killEnemy(boxCastAll[i].collider.gameObject);
-            
+               
             }
         }
     }
@@ -98,13 +99,12 @@ public class Dash : MonoBehaviour {
        
         timeFromLastKill = Time.time;
         enemy.GetComponent<Killable>().Hit();
-        GetComponent<Rage_Bar>().AddRage(enemy.GetComponent<Killable>().rageVal);
-
-
-            //GetComponent<Rage_Bar>().addRage
+        rage = GameObject.FindGameObjectWithTag("Rage Bar").GetComponent<Rage_Bar>();
+        rage.AddRage(enemy.GetComponent<Killable>().rageVal);
         
+        combo = GameObject.FindGameObjectWithTag("Combo").GetComponent<Combo>();
+        combo.AddCombo(1);
 
-        
     }
 
     

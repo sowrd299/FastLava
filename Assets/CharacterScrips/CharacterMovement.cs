@@ -4,9 +4,10 @@ using System.Collections;
 public class CharacterMovement : MonoBehaviour {
 
 	public float playerSpeed = 10f;
-
+    public float dashCooldown;
 	// Use this for initialization
 	void Start () {
+        dashCooldown = 0;
 	}
 
 	// Update is called once per frame
@@ -25,10 +26,18 @@ public class CharacterMovement : MonoBehaviour {
 			transform.Translate(0, -translation, 0);
 		if (Input.GetKey("d"))
 			transform.Translate(translation, 0, 0);
-        if(Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
+        //print(dashCooldown);
+        if(dashCooldown > 0)
         {
-            GetComponent<Dash>().dash(5,1);
-
+            dashCooldown-= Time.deltaTime;
+        } else
+        {
+            if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
+            {
+                dashCooldown = 0.5f;
+                GetComponent<Dash>().dash(5, 1);
+            }
         }
+        
 	}
 }
