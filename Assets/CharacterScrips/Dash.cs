@@ -14,8 +14,11 @@ public class Dash : MonoBehaviour {
     private float dashDirection;
     private Vector3 moveVector;
     public double timeFromLastKill;
+    private GameObject tempObject;
+    private bool debug;
 	void Start () {
         dash(0,0.001f); //instantiates variables
+        debug = false;
     }
 	
 	// Update is called once per frame
@@ -71,7 +74,7 @@ public class Dash : MonoBehaviour {
         pointList[2] = pointList[1] + new Vector2(polarX(dashWidth, dashDirection-90), polarY(dashWidth, dashDirection-90));
         //player's let side before dash
         pointList[3] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - 90), polarY(dashWidth, dashDirection - 90));
-        GameObject tempObject = new GameObject("tempObject");
+        tempObject = new GameObject("tempObject");
         tempObject.AddComponent<PolygonCollider2D>();
         Vector2[] line = new Vector2[2];
         line[0] = pointList[0];
@@ -79,15 +82,15 @@ public class Dash : MonoBehaviour {
         tempObject.GetComponent<PolygonCollider2D>().SetPath(0,line);
         line[0] = pointList[1];
         line[1] = pointList[2];
-        tempObject.GetComponent<PolygonCollider2D>().SetPath(0, line);
+        tempObject.GetComponent<PolygonCollider2D>().SetPath(1, line);
         line[0] = pointList[2];
         line[1] = pointList[3];
-        tempObject.GetComponent<PolygonCollider2D>().SetPath(0, line);
+        tempObject.GetComponent<PolygonCollider2D>().SetPath(2, line);
         line[0] = pointList[3];
         line[1] = pointList[0];
-        tempObject.GetComponent<PolygonCollider2D>().SetPath(0, line);
-        //Gizmos.color = Color.cyan;
-        //Gizmos.DrawLine(playerLocation, playerLocation + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection)));
+        tempObject.GetComponent<PolygonCollider2D>().SetPath(3, line);
+        
+        
         return tempObject;
 
     }
@@ -103,7 +106,9 @@ public class Dash : MonoBehaviour {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for(int i = 0; i < enemies.Length; i++)
         {
-            //if(poly.IsTouching())  need a way to reference enemy's Collider2D
+            if (poly.GetComponent<PolygonCollider2D>().IsTouching(enemies[i].GetComponent<Collider2D>())){
+                result.Add(enemies[i]);
+            }  
             
         }
         return result;
@@ -115,8 +120,8 @@ public class Dash : MonoBehaviour {
         {
             timeFromLastKill = Time.time;
         }
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in enemies)
+
+        foreach (GameObject enemy in enemyList)
         {
             enemy.GetComponent<Killable>().Hit();
         }
@@ -140,8 +145,12 @@ public class Dash : MonoBehaviour {
         return (float)(System.Math.Atan2(yDiff, xDiff));
     }
 
+    void OnDrawGizmos()
+    {
+        debug = true;
+        Gizmos.color = Color.cyan;
+     
+    }
 
-    
-   
 
 }
