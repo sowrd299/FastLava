@@ -22,7 +22,7 @@ public class Rage_Bar : MonoBehaviour {
 
     public bool vulnerable()
     {
-        if (rage < 50;)
+        if (rage < 60;)
             return true;
         return false;
     }
