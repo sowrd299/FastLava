@@ -149,7 +149,7 @@ public class Dash : MonoBehaviour {
     {
         debug = true;
         Gizmos.color = Color.cyan;
-     
+        
     }
 
 
