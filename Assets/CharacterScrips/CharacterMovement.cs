@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CharacterMovement : MonoBehaviour {
 
-	public float playerSpeed = 10;
+	public float playerSpeed = 10f;
 
 	// Use this for initialization
 	void Start () {
