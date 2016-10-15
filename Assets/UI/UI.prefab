@@ -91,7 +91,7 @@ GameObject:
   - 114: {fileID: 114000011490022654}
   m_Layer: 5
   m_Name: Rage
-  m_TagString: Untagged
+  m_TagString: RageBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   - 114: {fileID: 114000012751555486}
   m_Layer: 5
   m_Name: Combo
-  m_TagString: Untagged
+  m_TagString: Combo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,9 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e070a446381d6d641802344067da7768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   rage_bar: {fileID: 114000012930845908}
-  rage: 0
 --- !u!114 &114000012170153374
 MonoBehaviour:
   m_ObjectHideFlags: 1
