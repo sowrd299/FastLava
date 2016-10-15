@@ -5,14 +5,20 @@ public class CharacterMovement : MonoBehaviour {
 
 	public float playerSpeed = 10f;
     public float dashCooldown;
+    Rage_Bar rage;
+    private float dashDistance;
 	// Use this for initialization
 	void Start () {
         dashCooldown = 0;
-	}
+        dashDistance = 0;
+        rage = GameObject.FindGameObjectWithTag("RageBar").GetComponent<Rage_Bar>();
+    }
 
 	// Update is called once per frame
 	void Update () {
+        dashDistance = (float)(0.07 * rage.GetRage() + 0.5);
 		Movement ();
+
 	}
 
 	void Movement() {
@@ -35,7 +41,7 @@ public class CharacterMovement : MonoBehaviour {
             if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
             {
                 dashCooldown = 0.4f;
-                GetComponent<Dash>().dash(6, 1);
+                GetComponent<Dash>().dash(dashDistance, 1);
                
             }
         }

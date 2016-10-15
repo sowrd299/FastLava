@@ -36,7 +36,7 @@ public class Dash : MonoBehaviour {
         } 
 	}
 
-    public void dash(int distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
+    public void dash(float distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
     {
         //duration = 1 for a single frame dash
         
