@@ -97,13 +97,14 @@ public class Dash : MonoBehaviour {
     public void killEnemy(GameObject enemy)
     {
        
-        timeFromLastKill = Time.time;
+        timeFromLastKill = 0;
         enemy.GetComponent<Killable>().Hit();
         rage = GameObject.FindGameObjectWithTag("Rage Bar").GetComponent<Rage_Bar>();
         rage.AddRage(enemy.GetComponent<Killable>().rageVal);
         
         combo = GameObject.FindGameObjectWithTag("Combo").GetComponent<Combo>();
         combo.AddCombo(1);
+        combo.resetTimer();
 
     }
 
