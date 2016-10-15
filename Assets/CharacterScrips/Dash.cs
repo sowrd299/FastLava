@@ -98,6 +98,8 @@ public class Dash : MonoBehaviour {
        
         timeFromLastKill = Time.time;
         enemy.GetComponent<Killable>().Hit();
+        GetComponent<Rage_Bar>().AddRage(enemy.GetComponent<Killable>().rageVal);
+
 
             //GetComponent<Rage_Bar>().addRage
         

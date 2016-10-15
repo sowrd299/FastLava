@@ -8,14 +8,14 @@ public class Rage_Bar : MonoBehaviour {
     public Slider rage_bar;
     public float rage;
 
-    float GetRage()
+    public float GetRage()
     {
         return rage;
     }
 
-    void AddRage()
+    public void AddRage(int x)
     {
-
+        rage += x;
     }
 
     void Start ()
