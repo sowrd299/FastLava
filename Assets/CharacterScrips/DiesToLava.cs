@@ -3,13 +3,18 @@ using System.Collections;
 
 public class DiesToLava : MonoBehaviour {
 
-    void OnTriggerEnter(Collider c)
+    void OnTriggerEnter2D(Collider2D c)
     {
-        Debug.Log("I'm touching something!");
         if(c.gameObject.tag == "Lava")
         {
-            Debug.Log("I'm dying!");
+            Die();
         }
+    }
+
+    public bool Die()
+    {
+        Debug.Log("I am dead!");
+        return true;
     }
 
 }
