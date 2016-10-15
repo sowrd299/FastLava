@@ -9,7 +9,7 @@ TagManager:
   - PlayerStart
   - Lava
   - Combo
-  - Rage Bar
+  - RageBar
   layers:
   - Default
   - TransparentFX
