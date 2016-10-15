@@ -14,6 +14,7 @@ public class Rage_Bar : MonoBehaviour {
 
     void Start ()
     {
+
         rage_bar.maxValue = 100;
         rage_bar.minValue = 0;
         rage_bar.value = 0;
