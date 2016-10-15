@@ -387,6 +387,21 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 29.2
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012231019570, guid: 9adcba0a0d5e44d468a911730579d81f,
+        type: 2}
+      propertyPath: dashDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012231019570, guid: 9adcba0a0d5e44d468a911730579d81f,
+        type: 2}
+      propertyPath: duration
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012231019570, guid: 9adcba0a0d5e44d468a911730579d81f,
+        type: 2}
+      propertyPath: dashWidth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
   m_IsPrefabParent: 0

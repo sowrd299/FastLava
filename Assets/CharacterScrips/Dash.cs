@@ -6,83 +6,96 @@ public class Dash : MonoBehaviour {
 
     
     // Use this for initialization
-    public float dashDistance;
-    public float duration;
-    public GameObject player;
+    private float dashDistance;
+    private float duration;
     private float dashTimer;
+    private float dashSpeed;
+    public int dashWidth;
     private float dashDirection;
-    private Vector2 moveVector;
+    private Vector3 moveVector;
     public double timeFromLastKill;
 	void Start () {
-        dash(0, 0, 0); //instantiates variables
+        dash(0,0.001f); //instantiates variables
     }
 	
 	// Update is called once per frame
 	void Update () {    
-	    if(dashTimer < duration)
+	    if(dashTimer <= duration)
         {
             dashTimer += Time.deltaTime;
-            player.transform.Translate(moveVector*Time.deltaTime);     //Not sure I'm using time.deltatime correctly here       
-        }
+            print(dashTimer);
+            transform.Translate(moveVector*Time.deltaTime);
+        } 
 	}
 
-    public void dash(int dashDistance, float dashDirection, float duration)        //call this to dash in a direction for a distance in a certain time.  
+    public void dash(int distance, float duration)        //call this to dash in a direction for a distance in a certain time.  
     {                                                                              //duration = 1 for a single frame dash
-        dashTimer = 0;
+        dashDistance = distance;
         
-        float xDiff = Input.mousePosition.x - player.transform.position.x;
-        float yDiff = Input.mousePosition.y - player.transform.position.y;
+        this.duration = duration;
+        dashTimer = 0;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float xDiff = mousePos.x - transform.position.x;
+        float yDiff = mousePos.y - transform.position.y;
+
+
+
         dashDirection = getAngle(xDiff, yDiff);
+        if (duration > 1/60) { 
+            dashSpeed = (distance / duration)/60;
+        } else
+        {
+            dashSpeed = distance;
+        }
 
-
-        float stepDistance = dashDistance * (dashTimer / duration);   //div by zero if duration is zero
-        moveVector = new Vector2(stepDistance * Mathf.Cos(dashDirection), stepDistance * Mathf.Sin(dashDirection));
-
-        RectTransform playerRect = (RectTransform)player.transform;
-        int playerWidth = (int)playerRect.rect.width;
-
-        ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, playerWidth);
-        killEnemies(enemyList);
+        
+        moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection),  dashSpeed * Mathf.Sin(dashDirection),0);
+        print(moveVector);
+       // ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
+        //killEnemies(enemyList);
     }
 
     
 
-    public PolygonCollider2D getPolygon(int dashDistance, float dashDirection, int playerWidth)
+    public GameObject getPolygon(int dashDistance, float dashDirection, int dashWidth)
     {  //return a rectangular polygon that encompasses the entire dash movement
 
         Vector2[] pointList = new Vector2[4];
 
         //player's right side before dash, assuming facing up
-        pointList[0] = new Vector2(polarX(playerWidth, dashDirection + 90),polarY(playerWidth,dashDirection + 90));
+        Vector2 playerLocation = transform.position;
+        pointList[0] = playerLocation + new Vector2(polarX(dashWidth, dashDirection + 90),polarY(dashWidth,dashDirection + 90));
         //player's right side after dash
         pointList[1] = pointList[0] + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
         //player's left side after dash
-        pointList[2] = pointList[1] + new Vector2(polarX(playerWidth, dashDirection-90), polarY(playerWidth, dashDirection-90));
+        pointList[2] = pointList[1] + new Vector2(polarX(dashWidth, dashDirection-90), polarY(dashWidth, dashDirection-90));
         //player's let side before dash
-        pointList[3] = new Vector2(polarX(playerWidth, dashDirection - 90), polarY(playerWidth, dashDirection - 90));
-    
-        PolygonCollider2D result = new PolygonCollider2D();
+        pointList[3] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - 90), polarY(dashWidth, dashDirection - 90));
+        GameObject tempObject = new GameObject("tempObject");
+        tempObject.AddComponent<PolygonCollider2D>();
         Vector2[] line = new Vector2[2];
         line[0] = pointList[0];
         line[1] = pointList[1];
-        result.SetPath(0,line);
+        tempObject.GetComponent<PolygonCollider2D>().SetPath(0,line);
         line[0] = pointList[1];
         line[1] = pointList[2];
-        result.SetPath(1,line);
+        tempObject.GetComponent<PolygonCollider2D>().SetPath(0, line);
         line[0] = pointList[2];
         line[1] = pointList[3];
-        result.SetPath(2, line);
+        tempObject.GetComponent<PolygonCollider2D>().SetPath(0, line);
         line[0] = pointList[3];
         line[1] = pointList[0];
-        result.SetPath(3, line);
-        return result;
+        tempObject.GetComponent<PolygonCollider2D>().SetPath(0, line);
+        //Gizmos.color = Color.cyan;
+        //Gizmos.DrawLine(playerLocation, playerLocation + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection)));
+        return tempObject;
 
     }
 
-    public ArrayList getCollisions(int dashDistance, float dashDirection, int playerWidth)  //return a list of all affected enemies
+    public ArrayList getCollisions(int dashDistance, float dashDirection, int dashWidth)  //return a list of all affected enemies
     {
 
-        PolygonCollider2D poly = getPolygon(dashDistance,dashDirection,playerWidth);
+        GameObject poly = getPolygon(dashDistance,dashDirection,dashWidth);
 
 
         ArrayList result = new ArrayList();
@@ -124,7 +137,7 @@ public class Dash : MonoBehaviour {
 
     public float getAngle(float xDiff, float yDiff)  //returns the angle from a given xDiff and yDiff
     {
-        return (float)(System.Math.Atan2(yDiff, xDiff) * 180.0 / System.Math.PI);
+        return (float)(System.Math.Atan2(yDiff, xDiff));
     }
 
 
