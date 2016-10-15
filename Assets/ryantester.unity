@@ -135,7 +135,7 @@ Prefab:
     - target: {fileID: 224000012489639786, guid: c38f1946baff6554fb3c8fe03828626e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224000012489639786, guid: c38f1946baff6554fb3c8fe03828626e,
         type: 2}
@@ -290,7 +290,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012932043150, guid: c38f1946baff6554fb3c8fe03828626e, type: 2}
       propertyPath: m_TagString
-      value: Rage Bar
+      value: RageBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c38f1946baff6554fb3c8fe03828626e, type: 2}
@@ -332,7 +332,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
@@ -441,6 +441,11 @@ Prefab:
       propertyPath: m_TagString
       value: PlayerStart
       objectReference: {fileID: 0}
+    - target: {fileID: 60000013545762004, guid: d0037f66cfd05f744b2ee3c56ab68cf1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
   m_IsPrefabParent: 0
@@ -481,7 +486,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014069085168, guid: a0695294f3ef6d840b8d885d28c83c1d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0695294f3ef6d840b8d885d28c83c1d, type: 2}
