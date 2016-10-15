@@ -945,9 +945,53 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    - target: {fileID: 1000010821222222, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_TagString
       value: PlayerStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012843059784, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: PlayerStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012051649092, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011406675070, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013454964290, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010082529110, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013205611806, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012240546350, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013691613414, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013189828256, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014188881564, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010501653540, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_TagString
+      value: EnemyStart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
