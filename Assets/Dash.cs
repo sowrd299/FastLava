@@ -1,0 +1,115 @@
+﻿using UnityEngine;
+
+using System.Collections;
+
+public class Dash : MonoBehaviour {
+
+    
+    // Use this for initialization
+    public float dashDistance;
+    public float duration;
+    public GameObject player;
+    private float dashTimer;
+    private float dashAngle;
+    private Vector2 moveVector;
+    private GameObject[] enemyList;
+	void Start () {
+        dashTimer = 0;
+
+
+        float xDiff = Input.mousePosition.x - player.transform.position.x;
+        float yDiff = Input.mousePosition.y - player.transform.position.y;
+        dashAngle = getAngle(xDiff, yDiff);
+
+
+        float stepDistance = dashDistance * (dashTimer / duration);   //div by zero if duration is zero
+        moveVector = new Vector2(stepDistance * Mathf.Cos(dashAngle), stepDistance * Mathf.Sin(dashAngle));
+        enemyList = getCollisions();
+        killEnemies(enemyList);
+    }
+	
+	// Update is called once per frame
+	void Update () {    
+	    if(dashTimer < duration)
+        {
+            dashTimer += Time.deltaTime;
+            player.transform.Translate(moveVector*Time.deltaTime);            
+        }
+	}
+
+    
+
+    
+
+    public PolygonCollider2D getPolygon(int dashDistance, float dashDirection, int playerWidth)
+    {
+        Vector2[] pointList = new Vector2[4];
+
+        //player's right side before dash, assuming facing up
+        pointList[0] = new Vector2(polarX(playerWidth, dashDirection + 90),polarY(playerWidth,dashDirection + 90));
+        //player's right side after dash
+        pointList[1] = pointList[0] + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
+        //player's left side after dash
+        pointList[2] = pointList[1] + new Vector2(polarX(playerWidth, dashDirection-90), polarY(playerWidth, dashDirection-90));
+        //player's let side before dash
+        pointList[3] = new Vector2(polarX(playerWidth, dashDirection - 90), polarY(playerWidth, dashDirection - 90));
+    
+        PolygonCollider2D result = new PolygonCollider2D();
+        Vector2[] line = new Vector2[2];
+        line[0] = pointList[0];
+        line[1] = pointList[1];
+        result.SetPath(0,line);
+        line[0] = pointList[1];
+        line[1] = pointList[2];
+        result.SetPath(1,line);
+        line[0] = pointList[2];
+        line[1] = pointList[3];
+        result.SetPath(2, line);
+        line[0] = pointList[3];
+        line[1] = pointList[0];
+        result.SetPath(3, line);
+        return result;
+
+    }
+
+    public GameObject[] getCollisions(int dashDistance, float dashDirection, int playerWidth)
+    {
+
+        PolygonCollider2D poly = getPolygon(dashDistance,dashDirection,playerWidth);
+        
+
+        GameObject[] result;
+        enemyList = GameObject.FindGameObjectsWithTag("Enemy");
+        for(int i = 0; i < enemyList.Length; i++)
+        {
+            //if(poly.IsTouching())  need a way to reference enemy's Collider2D
+        }
+        return result;
+
+    }
+    private float polarX(float distance, float angle)  //returns x coord of a distance in a given direction
+    {  
+        return (float)(distance * System.Math.Cos(angle));  
+    }
+
+    private float polarY(float distance, float angle)  //returns y coord of a distance in a given direction
+    {
+        return (float)(distance * System.Math.Sin(angle));
+    }
+
+    public float getAngle(float xDiff, float yDiff)  //returns the angle from a given xDiff and yDiff
+    {
+        return (float)(System.Math.Atan2(yDiff, xDiff) * 180.0 / System.Math.PI);
+    }
+
+    public void killEnemies(GameObject[] enemyList)
+    {
+        for(int i = 0; i < enemyList.Length; i++)
+        {
+            print("ENEMY WAS HIT");
+            //TELL ENEMIES TO KILL THEMSELVES
+        }
+    }
+   
+
+}
