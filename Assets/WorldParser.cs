@@ -14,7 +14,7 @@ public class WorldParser : MonoBehaviour {
         }
     }
 
-	void Start () {
+	void Awake () {
         GameObject spawnPoint = GameObject.FindWithTag("PlayerStart");
         player = Instantiate(Resources.Load("Prefabs/Player") as GameObject);
         player.transform.position = spawnPoint.transform.position;

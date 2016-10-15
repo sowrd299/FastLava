@@ -14,23 +14,23 @@ public class Dash : MonoBehaviour {
     private float dashDirection;
     private Vector3 moveVector;
     public double timeFromLastKill;
-    private GameObject tempObject;
-
+   
+    private Vector2 angle;
     private bool debug;
 	void Start () {
         dash(0,1); //instantiates variables
         debug = false;
-        tempObject = new GameObject("tempObject");
-        tempObject.AddComponent<PolygonCollider2D>();
-        tempObject.GetComponent<PolygonCollider2D>().pathCount = 4;
+        
     }
 	
 	// Update is called once per frame
 	void Update () {    
-	    if(dashTimer <= duration)
+	    if(dashTimer < duration)
         {
             dashTimer += 1;
+            getBoxCast();
             transform.Translate(moveVector);
+            
         } 
 	}
 
@@ -43,7 +43,7 @@ public class Dash : MonoBehaviour {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float xDiff = mousePos.x - transform.position.x;
         float yDiff = mousePos.y - transform.position.y;
-
+        angle = new Vector2(yDiff, xDiff);
 
 
         dashDirection = getAngle(xDiff, yDiff);
@@ -52,15 +52,33 @@ public class Dash : MonoBehaviour {
         
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection),  dashSpeed * Mathf.Sin(dashDirection),0);
         
-       ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
-        killEnemies(enemyList);
+       //ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
+        //killEnemies(enemyList);
     }
 
-    
+    public void getBoxCast()
+    {
+        RaycastHit2D[] boxCastAll;
+        boxCastAll = Physics2D.BoxCastAll(transform.position, new Vector2(3,3), Mathf.Rad2Deg*dashDirection,angle, dashDirection);
+        
 
-    public void getPolygon(int dashDistance, float dashDirection, float dashWidth)
+        print(boxCastAll.Length);
+        for(int i = 0; i < boxCastAll.Length; i++)
+        {
+            if (boxCastAll[i].collider.gameObject.tag == "Enemy")
+            {
+                boxCastAll[i].collider.gameObject.GetComponent<Killable>().Hit();
+                print("ENEMY HIT");
+            }
+        }
+            
+        
+
+    }
+    /*
+    public GameObject getPolygon(int dashDistance, float dashDirection, float dashWidth)
     {  //return a rectangular polygon that encompasses the entire dash movement
-
+        
         Vector2[] pointList = new Vector2[4];
 
         //player's right side before dash, assuming facing up
@@ -92,14 +110,15 @@ public class Dash : MonoBehaviour {
         line[1] = pointList[0];
         tempObject.GetComponent<PolygonCollider2D>().SetPath(3, line);
         
+        return tempObject;
         
-
     }
-
+    */
+    /*
     public ArrayList getCollisions(int dashDistance, float dashDirection, float dashWidth)  //return a list of all affected enemies
     {
 
-        getPolygon(dashDistance,dashDirection,dashWidth);
+        tempObject = getPolygon(dashDistance,dashDirection,dashWidth);
 
 
         ArrayList result = new ArrayList();
@@ -118,6 +137,7 @@ public class Dash : MonoBehaviour {
         return result;
 
     }
+    */
     public void killEnemies(ArrayList enemyList)
     {
         if(enemyList.Count != 0)         //marks time from last kill for combo duration purposes
@@ -131,13 +151,7 @@ public class Dash : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag == "Enemy" )
-            //enemy.GetComponent<Killable>().Hit();
-            print("ENEMY HIT");
-
-    }
+    
 
 
     private float polarX(float distance, float angle)  //returns x coord of a distance in a given direction
@@ -159,7 +173,7 @@ public class Dash : MonoBehaviour {
     {
         debug = true;
         Gizmos.color = Color.cyan;
-        
+        Gizmos.DrawLine(transform.position, transform.position + new Vector3(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection),0));
     }
 
 
