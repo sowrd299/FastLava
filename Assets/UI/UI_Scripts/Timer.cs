@@ -4,18 +4,20 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-    public int time;
+    private float time_passed;
     public Text timer;
+
     // Use this for initialization
 	void Start ()
     {
-        time = 0;
-        
+        time_passed = 0f;
+        timer.text = "";
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-	    
+        time_passed = 600 - Time.time;
+        timer.text = time_passed.ToString();
 	}
 }
