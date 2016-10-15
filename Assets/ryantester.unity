@@ -90,48 +90,48 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &191023456
-GameObject:
+--- !u!1001 &322411570
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 191023458}
-  - 114: {fileID: 191023457}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &191023457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 191023456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5336cc3b7c24ba0498e61ae933999f7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rageVal: 10
---- !u!4 &191023458
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 191023456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.42, y: -10.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1236194676}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.50676
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -11.548317
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011979891928, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b459e77fe7daa874aa234a0a73a53126, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &797629437
 Prefab:
   m_ObjectHideFlags: 0
@@ -177,332 +177,216 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000013291708082, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013535016734, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011012082090, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010024492450, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013015919080, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012397436058, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010555897210, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011905835102, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013420402356, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010554008340, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012318691922, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011731552274, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012784341046, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011530540516, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011450583998, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012902306268, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010409164388, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011810418084, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000014050755902, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011443237536, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012874119760, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013882277626, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012326008926, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000014290845650, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013379306704, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012100919168, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010703845354, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012127952430, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000014291173142, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012504151670, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013135236552, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010205780184, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010103760918, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000014255223914, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012481348582, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012094954088, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012318772724, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013172336318, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011755430770, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012624298622, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010002748378, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010864807132, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010425103240, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000012901510922, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000010227746246, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011427013020, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013909984624, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011001105494, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000013762726186, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000011133637700, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
       objectReference: {fileID: 0}
     - target: {fileID: 1000014271277092, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012815919196, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -49.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012815919196, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 29.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0037f66cfd05f744b2ee3c56ab68cf1, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &1236194675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1236194676}
-  - 212: {fileID: 1236194677}
-  m_Layer: 0
-  m_Name: Sprite
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1236194676
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236194675}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7576208, y: -1.1086016, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 191023458}
-  m_RootOrder: 0
---- !u!212 &1236194677
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1236194675}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1553089563
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 55edf9d48c614194aa4797edb2d9e670, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!1001 &2064225382
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.1499996
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -11.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012779476300, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000010717294366, guid: 9adcba0a0d5e44d468a911730579d81f,
-        type: 2}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000010717294366, guid: 9adcba0a0d5e44d468a911730579d81f,
-        type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000010717294366, guid: 9adcba0a0d5e44d468a911730579d81f,
-        type: 2}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010379419962, guid: 9adcba0a0d5e44d468a911730579d81f,
-        type: 2}
-      propertyPath: playerSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 9adcba0a0d5e44d468a911730579d81f, type: 2}
   m_IsPrefabParent: 0
