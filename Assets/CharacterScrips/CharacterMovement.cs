@@ -34,8 +34,9 @@ public class CharacterMovement : MonoBehaviour {
         {
             if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
             {
-                dashCooldown = 0.5f;
-                GetComponent<Dash>().dash(5, 1);
+                dashCooldown = 0.4f;
+                GetComponent<Dash>().dash(6, 1);
+               
             }
         }
         
