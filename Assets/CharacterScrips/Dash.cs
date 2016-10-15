@@ -15,11 +15,10 @@ public class Dash : MonoBehaviour {
     private Vector3 moveVector;
     public double timeFromLastKill;
     
-    private Vector2 angle;
-    private bool debug;
+
+
 	void Start () {
         dash(0,1); //instantiates variables
-        debug = false;
         
     }
 	
@@ -47,7 +46,7 @@ public class Dash : MonoBehaviour {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float xDiff = mousePos.x - transform.position.x;
         float yDiff = mousePos.y - transform.position.y;
-        angle = new Vector2(yDiff, xDiff);
+    
 
 
         dashDirection = getAngle(xDiff, yDiff);
@@ -69,8 +68,8 @@ public class Dash : MonoBehaviour {
         {
             if (boxCastAll[i].collider.gameObject.tag == "Enemy")
             {
-                boxCastAll[i].collider.gameObject.GetComponent<Killable>().Hit();
-               
+                killEnemy(boxCastAll[i].collider.gameObject);
+
             }
         }
 
@@ -88,85 +87,22 @@ public class Dash : MonoBehaviour {
         {
             if (boxCastAll[i].collider.gameObject.tag == "Enemy")
             {
-                boxCastAll[i].collider.gameObject.GetComponent<Killable>().Hit();
+                killEnemy(boxCastAll[i].collider.gameObject);
             
             }
         }
     }
-    /*
-    public GameObject getPolygon(int dashDistance, float dashDirection, float dashWidth)
-    {  //return a rectangular polygon that encompasses the entire dash movement
-        
-        Vector2[] pointList = new Vector2[4];
-
-        //player's right side before dash, assuming facing up
-        Vector2 playerLocation = transform.position;
-        pointList[0] = playerLocation + new Vector2(polarX(dashWidth, dashDirection + Mathf.PI/2),polarY(dashWidth,dashDirection + Mathf.PI / 2));
-        //player's right side after dash
-        pointList[1] = playerLocation + new Vector2(polarX(dashWidth, dashDirection + Mathf.PI / 2), polarY(dashWidth, dashDirection + Mathf.PI / 2))
-            + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
-        //player's left side after dash
-        pointList[2] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - Mathf.PI / 2), polarY(dashWidth, dashDirection - Mathf.PI / 2)) 
-            + new Vector2(polarX(dashDistance, dashDirection), polarY(dashDistance, dashDirection));
-        //player's let side before dash
-        pointList[3] = playerLocation + new Vector2(polarX(dashWidth, dashDirection - Mathf.PI / 2), polarY(dashWidth, dashDirection - Mathf.PI / 2));
-        
-        
-        
-        
-        Vector2[] line = new Vector2[2];
-        line[0] = pointList[0];
-        line[1] = pointList[1];
-        tempObject.GetComponent<PolygonCollider2D>().SetPath(0,line);
-        line[0] = pointList[1];
-        line[1] = pointList[2];
-        tempObject.GetComponent<PolygonCollider2D>().SetPath(1, line);
-        line[0] = pointList[2];
-        line[1] = pointList[3];
-        tempObject.GetComponent<PolygonCollider2D>().SetPath(2, line);
-        line[0] = pointList[3];
-        line[1] = pointList[0];
-        tempObject.GetComponent<PolygonCollider2D>().SetPath(3, line);
-        
-        return tempObject;
-        
-    }
-    */
-    /*
-    public ArrayList getCollisions(int dashDistance, float dashDirection, float dashWidth)  //return a list of all affected enemies
+    
+    public void killEnemy(GameObject enemy)
     {
+       
+        timeFromLastKill = Time.time;
+        enemy.GetComponent<Killable>().Hit();
 
-        tempObject = getPolygon(dashDistance,dashDirection,dashWidth);
-
-
-        ArrayList result = new ArrayList();
+            //GetComponent<Rage_Bar>().addRage
         
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
         
-        for(int i = 0; i < enemies.Length; i++)
-        {
-            if (tempObject.GetComponent<PolygonCollider2D>().IsTouching(enemies[i].GetComponent<Collider2D>())){
-                result.Add(enemies[i]);
-                print("ENEMY HIT");
-            }  
-            
-        }
-        //Destroy(poly);
-        return result;
-
-    }
-    */
-    public void killEnemies(ArrayList enemyList)
-    {
-        if(enemyList.Count != 0)         //marks time from last kill for combo duration purposes
-        {
-            timeFromLastKill = Time.time;
-        }
-
-        foreach (GameObject enemy in enemyList)
-        {
-            enemy.GetComponent<Killable>().Hit();
-        }
     }
 
     
@@ -187,7 +123,10 @@ public class Dash : MonoBehaviour {
         return (float)(System.Math.Atan2(yDiff, xDiff));
     }
 
-    
+    public double getTimeSinceLastKill()
+    {
+        return timeFromLastKill;
+    }
 
 
 }
