@@ -7,11 +7,6 @@ public class Rage_Bar : MonoBehaviour {
     public GameObject player;
     public Slider rage_bar;
 
-    bool getInvuln()
-    {
-        return rage_bar.value > 60;
-    }
-
     int Calculate_Rage()
     {
         return 50;
