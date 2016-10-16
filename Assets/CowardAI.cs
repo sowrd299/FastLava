@@ -43,17 +43,17 @@ public class CowardAI : MonoBehaviour {
             } else
             {
                 GameObject bullet = Instantiate(Resources.Load("Prefabs/Bullet") as GameObject);
-                bullet.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer), polarY(0.5f, angleToPlayer),0);
+                bullet.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer-Mathf.PI/8), polarY(0.5f, angleToPlayer - Mathf.PI / 8),0);
                 bullet.GetComponent<BulletMovement>().setDirection(angleToPlayer);
                 bullet.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
                 bullet.GetComponent<BulletMovement>().calculateMoveVector();
                 GameObject bullet2 = Instantiate(Resources.Load("Prefabs/Bullet") as GameObject);
-                bullet2.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer), polarY(0.5f, angleToPlayer), 0);
+                bullet2.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer - Mathf.PI / 8), polarY(0.5f, angleToPlayer - Mathf.PI / 8), 0);
                 bullet2.GetComponent<BulletMovement>().setDirection(angleToPlayer+Mathf.PI/8);
                 bullet2.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
                 bullet2.GetComponent<BulletMovement>().calculateMoveVector();
                 GameObject bullet3 = Instantiate(Resources.Load("Prefabs/Bullet") as GameObject);
-                bullet3.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer), polarY(0.5f, angleToPlayer), 0);
+                bullet3.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer - Mathf.PI / 8), polarY(0.5f, angleToPlayer - Mathf.PI / 8), 0);
                 bullet3.GetComponent<BulletMovement>().setDirection(angleToPlayer - Mathf.PI / 8);
                 bullet3.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
                 bullet3.GetComponent<BulletMovement>().calculateMoveVector();
