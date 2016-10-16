@@ -14,8 +14,7 @@ public class CowardAI : MonoBehaviour {
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         angleToPlayer = getAngleToPlayer();
-        speed = 0.5f;
-        
+      
 
     }
 
@@ -26,9 +25,10 @@ public class CowardAI : MonoBehaviour {
         if(distanceToPlayer < runRadius)
         {
             angleToPlayer = getAngleToPlayer();
-            transform.Translate(speed * Mathf.Cos(angleToPlayer + Mathf.PI / 2), speed * Mathf.Sin(angleToPlayer + Mathf.PI / 2),0);
-
+            transform.Translate((speed * Mathf.Cos(angleToPlayer+Mathf.PI)) *Time.deltaTime, (speed * Mathf.Sin(angleToPlayer+Mathf.PI))*Time.deltaTime,0);
+            
         }
+
     }
     public float getAngleToPlayer()  //returns the angle from a given xDiff and yDiff
     {  //returns radian
