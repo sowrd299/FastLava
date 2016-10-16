@@ -12,7 +12,7 @@ public class CowardAI : MonoBehaviour {
     public float speed;
 
 	void Start () {
-	    player = GameObject.FindGameObjectWithTag("Player").GetComponent<GameObject>();
+        player = GameObject.FindGameObjectWithTag("Player");
         angleToPlayer = getAngleToPlayer();
         speed = 0.5f;
         
@@ -22,10 +22,10 @@ public class CowardAI : MonoBehaviour {
     // Update is called once per frame
 
     void Update () {
-        angleToPlayer = getAngleToPlayer();
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if(distanceToPlayer < runRadius)
         {
+            angleToPlayer = getAngleToPlayer();
             transform.Translate(speed * Mathf.Cos(angleToPlayer + Mathf.PI / 2), speed * Mathf.Sin(angleToPlayer + Mathf.PI / 2),0);
 
         }
