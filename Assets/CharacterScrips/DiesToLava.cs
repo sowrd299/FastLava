@@ -7,17 +7,25 @@ public class DiesToLava : MonoBehaviour {
     Rage_Bar rb;
     GameController gc;
     private bool wasVulnerable;
+    private bool amDead;
     void Start()
     {
         rb = GameObject.FindGameObjectWithTag("RageBar").GetComponent<Rage_Bar>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         wasVulnerable = false;
+        amDead = false;
     }
 
     void OnTriggerEnter2D(Collider2D c)
     {
         if(c.gameObject.tag == "Lava" && Vulnerable())
         {
+            if (!amDead)
+            {
+                GameObject go = Instantiate(Resources.Load("Prefabs/AnimatedFire") as GameObject);
+                go.transform.position = gameObject.transform.position;
+                go.GetComponent<SpriteRenderer>().sortingLayerName = "AbovePlayer";
+            }
             Die();
         }
         else if(c.gameObject.tag == "Victory")
@@ -29,6 +37,12 @@ public class DiesToLava : MonoBehaviour {
     {   
         if (coll.gameObject.tag == "Lava" && Vulnerable())
         {
+            if (!amDead)
+            {
+                GameObject go = Instantiate(Resources.Load("Prefabs/AnimatedFire") as GameObject);
+                go.transform.position = gameObject.transform.position;
+                go.GetComponent<SpriteRenderer>().sortingLayerName = "AbovePlayer";
+            }
             Die();
             
         }
@@ -48,6 +62,13 @@ public class DiesToLava : MonoBehaviour {
             if (overlaps.gameObject.tag == "Lava")//(x.GetComponent<PolygonCollider2D>().bounds.Contains(transform.position))
             {
                 Debug.Log("Dying to Lava!");
+                if (!amDead)
+                {
+                    GameObject go = Instantiate(Resources.Load("Prefabs/AnimatedFire") as GameObject);
+                    go.transform.position = gameObject.transform.position;
+                    go.GetComponent<SpriteRenderer>().sortingLayerName = "AbovePlayer";
+                    
+                }
                 Die();
             }
         }
@@ -60,6 +81,7 @@ public class DiesToLava : MonoBehaviour {
         ///returns true if player dies.
         Debug.Log("I am dead!");
         gc.End(false);
+        amDead = true;
         return true;
     }
 

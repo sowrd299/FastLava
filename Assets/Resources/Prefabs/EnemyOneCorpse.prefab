@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000012160849736}
   - 212: {fileID: 212000012031103444}
   - 114: {fileID: 114000013185235510}
+  - 114: {fileID: 114000014260170474}
   m_Layer: 0
   m_Name: EnemyOneCorpse
   m_TagString: Untagged
@@ -50,6 +51,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b883014bcb16c842bb321a457b79197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000014260170474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012951293990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8cf0bbff2a52b343a86c75d2e392c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212000012031103444
