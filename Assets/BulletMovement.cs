@@ -14,12 +14,12 @@ public class BulletMovement : MonoBehaviour {
         speed = 0;
         GameObject tempObject = GameObject.FindGameObjectWithTag("MainCamera");
         cam = tempObject.GetComponent<Camera>();
-        calculateMoveVector();
+        
 	}
 
     // Update is called once per frame
     void Update() {
-        transform.Translate(moveVector);
+        transform.Translate(moveVector * Time.deltaTime );
         Vector3 screenPos = cam.WorldToViewportPoint(transform.position);
         if(!(screenPos.x < 1 && screenPos.x >0 && screenPos.y < 1 && screenPos.y > 0))
         {
