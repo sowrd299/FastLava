@@ -17,7 +17,7 @@ public class Rage_Bar : MonoBehaviour {
     private void DecreaseRage()
     {
         if (rage > InvolThres)
-            rage -= 10 * Time.deltaTime;
+            rage -= 20 * Time.deltaTime;
         else
             rage -= 5 * Time.deltaTime;
         if (rage < 0)
