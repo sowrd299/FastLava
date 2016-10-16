@@ -12,6 +12,7 @@ TagManager:
   - RageBar
   - Rage Bar
   - Victory
+  - Score
   layers:
   - Default
   - TransparentFX

@@ -22,6 +22,8 @@ public class Rage_Bar : MonoBehaviour {
             rage -= 5 * Time.deltaTime;
         if (rage < 0)
             rage = 0;
+        if (rage > 100)
+            rage = 100;
     }
 
     public bool vulnerable()
