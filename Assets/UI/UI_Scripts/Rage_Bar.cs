@@ -15,7 +15,10 @@ public class Rage_Bar : MonoBehaviour {
 
     private void DecreaseRage()
     {
-        rage -= 25 * Time.deltaTime;
+        if (rage > 60)
+            rage -= 25 * Time.deltaTime;
+        else
+            rage -= 5 * Time.deltaTime;
         if (rage < 0)
             rage = 0;
     }
