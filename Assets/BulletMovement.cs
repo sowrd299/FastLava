@@ -10,8 +10,7 @@ public class BulletMovement : MonoBehaviour {
     private Vector3 moveVector;
     Camera cam;
 	void Start () {
-        direction = 0;
-        speed = 0;
+        
         GameObject tempObject = GameObject.FindGameObjectWithTag("MainCamera");
         cam = tempObject.GetComponent<Camera>();
         
@@ -19,14 +18,16 @@ public class BulletMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        moveVector = calculateMoveVector();
         transform.Translate(moveVector * Time.deltaTime );
+        
         Vector3 screenPos = cam.WorldToViewportPoint(transform.position);
         if(!(screenPos.x < 1 && screenPos.x >0 && screenPos.y < 1 && screenPos.y > 0))
         {
             Destroy(gameObject);   
         }
 	}
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Player")
             Destroy(gameObject);
@@ -36,13 +37,18 @@ public class BulletMovement : MonoBehaviour {
     {
         direction = x;
     }
+    public float getDirection()
+    {
+        return direction;
+    }
     public void setSpeed(float x)
     {
         speed = x;
     }
-    public void calculateMoveVector()
+    public Vector3 calculateMoveVector()
     {
         moveVector = new Vector3(speed * Mathf.Cos(direction), speed * Mathf.Sin(direction),0);
+        return moveVector;
     }
 
 }
