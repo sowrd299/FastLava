@@ -1123,7 +1123,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1912089195}
-<<<<<<< HEAD
 --- !u!1 &1989159425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,12 +1264,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!4 &2065351943
-Transform:
-=======
---- !u!1001 &1942820266
 Prefab:
->>>>>>> f5ede97281571447cd087f28be936e191f1a73d4
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
