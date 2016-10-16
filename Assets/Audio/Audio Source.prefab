@@ -21,7 +21,11 @@ GameObject:
   - 4: {fileID: 4000013222724526}
   - 82: {fileID: 82000012016559882}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: Audio Source
+=======
+  m_Name: Doom Theme
+>>>>>>> f5ede97281571447cd087f28be936e191f1a73d4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
