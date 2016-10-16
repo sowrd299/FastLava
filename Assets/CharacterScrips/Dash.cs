@@ -17,6 +17,8 @@ public class Dash : MonoBehaviour {
     public double timeFromLastKill;
 
 	public Animator dashing;
+    public FaceMouse faceMouse;
+    private int idleAnimeState;
    
     private Vector2 angle;
     private bool debug;
@@ -41,6 +43,8 @@ public class Dash : MonoBehaviour {
         dashDirection = getAngle(xDiff, yDiff);
         dashSpeed = dashDistance;
 
+        faceMouse = transform.GetComponentInChildren<FaceMouse>();
+        idleAnimeState = dashing.GetCurrentAnimatorStateInfo(0).fullPathHash;
 
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection), dashSpeed * Mathf.Sin(dashDirection), 0);
     }
@@ -56,7 +60,13 @@ public class Dash : MonoBehaviour {
             boxCastAroundPlayer();
             
 
-        } 
+        }
+        Debug.Log(idleAnimeState);
+        Debug.Log(dashing.GetCurrentAnimatorStateInfo(0).fullPathHash);
+        if (dashing.GetCurrentAnimatorStateInfo(0).fullPathHash == idleAnimeState)
+        {
+            //faceMouse.enabled = true;
+        }
 
 	}
 
@@ -89,6 +99,7 @@ public class Dash : MonoBehaviour {
     {
         //kill all things near player
 		dashing.SetBool ("spinattack", true);
+        faceMouse.enabled = false;
 		dashing.Play ("spinattack");
         murderAll(Physics2D.OverlapCircleAll(transform.position, explodeRadius));
     }
