@@ -43,13 +43,12 @@ public class CharacterMovement : MonoBehaviour {
             cooldownTimer-= Time.deltaTime;
         } else
         {
-            if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
+            if (/*Input.GetKeyDown("space")||*/ Input.GetMouseButtonDown(0))
             {
                 cooldownTimer = dashCooldown;
                 GetComponent<Dash>().dash(dashDistance, 1);
-               
             }
-            else if (Input.GetKeyDown("left shift"))
+            else if (Input.GetKeyDown("space"))
             {
                 GetComponent<Dash>().Explode();
             }
