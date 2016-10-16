@@ -49,6 +49,7 @@ public class DiesToLava : MonoBehaviour {
             }
         }
         wasVulnerable = Vulnerable();
+        
     }
     public bool Die()
     {
