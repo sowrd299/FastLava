@@ -3,7 +3,9 @@ using System.Collections;
 
 public class AIDiesToLava : MonoBehaviour {
 
-	// Use this for initialization
+    private GameObject go;
+
+    // Use this for initialization
 	void Start () {
 	    
 	}
@@ -13,6 +15,8 @@ public class AIDiesToLava : MonoBehaviour {
     {
         if (c.gameObject.tag == "Lava")
         {
+            go = Instantiate(Resources.Load("Prefabs/AnimatedFire") as GameObject);
+            go.transform.position = gameObject.transform.position;
             Destroy(gameObject);
         }
         
