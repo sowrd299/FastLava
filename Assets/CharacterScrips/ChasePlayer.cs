@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CowardAI : MonoBehaviour {
+public class ChasePlayer : MonoBehaviour {
 
     // Use this for initialization
     private GameObject player;
@@ -11,7 +11,8 @@ public class CowardAI : MonoBehaviour {
     public float runRadius;
     public float speed;
 
-	void Start () {
+    void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
         angleToPlayer = getAngleToPlayer();
         runRadius = (float)(runRadius + Random.value * 3 - 1.5);
@@ -21,13 +22,14 @@ public class CowardAI : MonoBehaviour {
 
     // Update is called once per frame
 
-    void Update () {
+    void Update()
+    {
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if(distanceToPlayer < runRadius)
+        if (distanceToPlayer < runRadius)
         {
             angleToPlayer = getAngleToPlayer();
-            transform.Translate((speed * Mathf.Cos(angleToPlayer+Mathf.PI)) *Time.deltaTime, (speed * Mathf.Sin(angleToPlayer+Mathf.PI))*Time.deltaTime,0);
-            
+            transform.Translate((speed * Mathf.Cos(angleToPlayer)) * Time.deltaTime, (speed * Mathf.Sin(angleToPlayer )) * Time.deltaTime, 0);
+
         }
 
     }
@@ -36,7 +38,7 @@ public class CowardAI : MonoBehaviour {
         playerLocation = player.transform.position;
         float xDiff = playerLocation.x - transform.position.x;
         float yDiff = playerLocation.y - transform.position.y;
-        
+
         return (float)(System.Math.Atan2(yDiff, xDiff));
     }
 }
