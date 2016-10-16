@@ -26,10 +26,7 @@ public class Rage_Bar : MonoBehaviour {
 
     public bool vulnerable()
     {
-        if (rage < 60)
-            return true;
-        else
-            return false;
+        return rage < 60;
     }
 
     public void AddRage(int x)
