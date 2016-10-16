@@ -46,7 +46,8 @@ public class CowardAI : MonoBehaviour {
                 bullet.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer), polarY(0.5f, angleToPlayer),0);
                 bullet.GetComponent<BulletMovement>().setDirection(angleToPlayer);
                 bullet.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
-
+                bullet.GetComponent<BulletMovement>().calculateMoveVector();
+                
                 fireTimer = fireRate;
             }
         }

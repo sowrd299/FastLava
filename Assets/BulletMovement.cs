@@ -37,6 +37,10 @@ public class BulletMovement : MonoBehaviour {
     {
         direction = x;
     }
+    public float getDirection()
+    {
+        return direction;
+    }
     public void setSpeed(float x)
     {
         speed = x;
