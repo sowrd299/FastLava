@@ -49,7 +49,7 @@ public class CharacterMovement : MonoBehaviour {
                 GetComponent<Dash>().dash(dashDistance, 1);
                
             }
-            else if (Input.GetKeyDown("q"))
+            else if (Input.GetKeyDown("left shift"))
             {
                 GetComponent<Dash>().Explode();
             }
