@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 10/16/2016 15:26:12-->
+<!--Last exported: 10/16/2016 15:46:30-->
 <Tiled2Unity version="1.0.2.1">
   <AssignMaterial mesh="mesh_0001" material="terrain" />
   <AssignMaterial mesh="mesh_0002" material="terrain" />
@@ -520,9 +520,6 @@
         <BoxCollider2D width="0" height="0" />
       </GameObject>
       <GameObject name="RectangleObject" x="61.92" y="-34.079998" rotation="0" tag="EnemyStart">
-        <BoxCollider2D width="0" height="0" />
-      </GameObject>
-      <GameObject name="RectangleObject" x="-15.36" y="-13.44" rotation="0" tag="EnemyStart">
         <BoxCollider2D width="0" height="0" />
       </GameObject>
       <GameObject name="RectangleObject" x="64.7999954" y="-30.24" rotation="0" tag="EnemyStart">
