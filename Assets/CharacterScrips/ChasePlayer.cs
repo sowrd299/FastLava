@@ -27,15 +27,16 @@ public class ChasePlayer : MonoBehaviour {
         if (!activated)
         {
             distanceToPlayer = Vector2.Distance((Vector2)(transform.position), (Vector2)(player.transform.position));
+            if(distanceToPlayer < runRadius)
+            {
+                activated = true;
+            }
         } else
         {
             angleToPlayer = getAngleToPlayer();
             transform.Translate((speed * Mathf.Cos(angleToPlayer)) * Time.deltaTime, (speed * Mathf.Sin(angleToPlayer)) * Time.deltaTime, 0);
         }
-        if (distanceToPlayer < runRadius && !activated)
-        {
-            activated = true;
-        }
+        
 
     }
     public float getAngleToPlayer()  //returns the angle from a given xDiff and yDiff
