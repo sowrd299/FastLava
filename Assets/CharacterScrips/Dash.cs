@@ -61,11 +61,14 @@ public class Dash : MonoBehaviour {
             
 
         }
-        Debug.Log(idleAnimeState);
-        Debug.Log(dashing.GetCurrentAnimatorStateInfo(0).fullPathHash);
         if (dashing.GetCurrentAnimatorStateInfo(0).fullPathHash == idleAnimeState)
         {
-            //faceMouse.enabled = true;
+            faceMouse.enabled = true;
+            Debug.Log("Canceling animaition");
+        }
+        else
+        {
+            Debug.Log("Allowing to continue to play animation.");
         }
 
 	}
