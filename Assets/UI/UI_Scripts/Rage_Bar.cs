@@ -4,12 +4,33 @@ using UnityEngine.UI;
 
 public class Rage_Bar : MonoBehaviour {
 
-    public GameObject player;
     public Slider rage_bar;
+    private float rage;
+    private double timer;
 
-    int Calculate_Rage()
+    public float GetRage()
     {
-        return 50;
+        return rage;
+    }
+
+    private void DecreaseRage()
+    {
+        if (rage > 60)
+            rage -= 25 * Time.deltaTime;
+        else
+            rage -= 5 * Time.deltaTime;
+        if (rage < 0)
+            rage = 0;
+    }
+
+    public bool vulnerable()
+    {
+        return rage < 60;
+    }
+
+    public void AddRage(int x)
+    {
+        rage += x;
     }
 
     void Start ()
@@ -17,15 +38,16 @@ public class Rage_Bar : MonoBehaviour {
 
         rage_bar.maxValue = 100;
         rage_bar.minValue = 0;
-        rage_bar.value = 0;
-        
+        rage = 0;
+        rage_bar.value = rage;
+        timer = 0;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         //Player's Rage Amount 
-        rage_bar.value = Calculate_Rage();
-        
+        DecreaseRage();
+        rage_bar.value = GetRage();
 	}
 }

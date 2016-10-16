@@ -5,15 +5,33 @@ using UnityEngine.UI;
 public class Combo : MonoBehaviour {
 
     public Text combo;
-	// Use this for initialization
-	void Start ()
+    private int comboValue;
+    private double timer;
+    // Use this for initialization
+
+    public void AddCombo(int x)
+    {
+        comboValue += x;
+    }
+    public void resetTimer()
+    {
+        timer = 0;
+    }
+    void Start ()
     {
         combo.text = "";
+        comboValue = 0;
+        timer = 0;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        combo.text = 20.ToString() + " Combo";
-	}
+        
+        combo.text = comboValue + " Combo";
+        if (timer >= 1)
+            comboValue = 0;
+        else
+            timer += Time.deltaTime;
+    }
 }
