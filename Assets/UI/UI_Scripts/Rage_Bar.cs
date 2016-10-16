@@ -16,16 +16,17 @@ public class Rage_Bar : MonoBehaviour {
     private void DecreaseRage()
     {
         if (timer >= 1)
+        {
             rage -= 25;
-        timer = 0;
+            if (rage < 0)
+                rage = 0;
+            timer = 0;
+        }
     }
 
     public bool vulnerable()
     {
-        if (rage < 60)
-            return true;
-        else
-            return false;
+        return rage < 60;
     }
 
     public void AddRage(int x)
