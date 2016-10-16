@@ -13,6 +13,7 @@ public class CowardAI : MonoBehaviour {
     public float fireRate;
     public float fireTimer;
     public float bulletSpeed;
+    private bool activated;
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         angleToPlayer = getAngleToPlayer();
@@ -25,9 +26,14 @@ public class CowardAI : MonoBehaviour {
     // Update is called once per frame
 
     void Update () {
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-     
-        if(distanceToPlayer < runRadius)
+        if (!activated)
+        {
+            distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            if(distanceToPlayer < runRadius)
+            {
+                activated = true;
+            }
+        } else 
         {
             angleToPlayer = getAngleToPlayer();
             transform.Translate((speed * Mathf.Cos(angleToPlayer+Mathf.PI)) *Time.deltaTime, (speed * Mathf.Sin(angleToPlayer+Mathf.PI))*Time.deltaTime,0);

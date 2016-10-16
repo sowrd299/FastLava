@@ -39,6 +39,7 @@ public class DiesToLava : MonoBehaviour {
     }
     void Update()
     {
+        
         if(Vulnerable() && !wasVulnerable)
         {
             GameObject x = GameObject.FindGameObjectWithTag("Lava");
@@ -52,6 +53,7 @@ public class DiesToLava : MonoBehaviour {
         wasVulnerable = Vulnerable();
         
     }
+    
     public bool Die()
     {
         ///returns true if player dies.

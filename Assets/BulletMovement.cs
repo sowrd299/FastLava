@@ -5,8 +5,8 @@ public class BulletMovement : MonoBehaviour {
 
     // Use this for initialization
 
-    public float direction;
-    public float speed;
+    private float direction;
+    private float speed;
     private Vector3 moveVector;
     Camera cam;
 	void Start () {
@@ -14,6 +14,7 @@ public class BulletMovement : MonoBehaviour {
         speed = 0;
         GameObject tempObject = GameObject.FindGameObjectWithTag("MainCamera");
         cam = tempObject.GetComponent<Camera>();
+        calculateMoveVector();
 	}
 
     // Update is called once per frame
