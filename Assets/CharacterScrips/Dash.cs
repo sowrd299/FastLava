@@ -12,6 +12,7 @@ public class Dash : MonoBehaviour {
     private float dashSpeed;
     public float dashWidth;
     private float dashDirection;
+    public float explodeRadius = 3;
     private Vector3 moveVector;
     public double timeFromLastKill;
     Combo combo;
@@ -60,36 +61,45 @@ public class Dash : MonoBehaviour {
         //killEnemies(enemyList);
     }
 
+    public void Explode()
+    {
+        //kill all things near player
+        murderAll(Physics2D.OverlapCircleAll(transform.position, explodeRadius));
+    }
+
     public void getBoxCast()
     {
         RaycastHit2D[] boxCastAll;
-        boxCastAll = Physics2D.BoxCastAll(transform.position, new Vector2(dashWidth,dashWidth), Mathf.Rad2Deg*dashDirection,new Vector2(Mathf.Cos(dashDirection),Mathf.Sin(dashDirection)), dashDistance);
-        
-        for(int i = 0; i < boxCastAll.Length; i++)
-        {
-            if (boxCastAll[i].collider.gameObject.tag == "Enemy")
-            {
-                killEnemy(boxCastAll[i].collider.gameObject);
-
-            }
-        }
-
-            
+        boxCastAll = Physics2D.BoxCastAll(transform.position, new Vector2(dashWidth, dashWidth), Mathf.Rad2Deg * dashDirection, new Vector2(Mathf.Cos(dashDirection), Mathf.Sin(dashDirection)), dashDistance);
+        murderCast(boxCastAll);
+    }   
         
 
-    }
     public void boxCastAroundPlayer()
     {
         RaycastHit2D[] boxCastAll;
         boxCastAll = Physics2D.BoxCastAll(transform.position, new Vector2(1.5f, 1.5f), Mathf.Rad2Deg * dashDirection, 
             new Vector2(Mathf.Cos(dashDirection), Mathf.Sin(dashDirection)), 0.0001f);
+        murderCast(boxCastAll);
+    }
 
-        for (int i = 0; i < boxCastAll.Length; i++)
+    private void murderCast(RaycastHit2D[] hits)
+    {
+        Collider2D[] r = new Collider2D[hits.Length];
+        for(int i = 0; i < hits.Length; ++i)
         {
-            if (boxCastAll[i].collider.gameObject.tag == "Enemy")
+            r[i] = hits[i].collider;
+        }
+        murderAll(r);
+    }
+
+    private void murderAll(Collider2D[] hits) {
+        for(int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i].gameObject.tag == "Enemy")
             {
-                killEnemy(boxCastAll[i].collider.gameObject);
-               
+                killEnemy(hits[i].gameObject);
+
             }
         }
     }

@@ -50,6 +50,10 @@ public class CharacterMovement : MonoBehaviour {
                 GetComponent<Dash>().dash(dashDistance, 1);
                
             }
+            else if (Input.GetKeyDown("q"))
+            {
+                GetComponent<Dash>().Explode();
+            }
         }
         
 	}
