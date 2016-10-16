@@ -15,13 +15,9 @@ public class Rage_Bar : MonoBehaviour {
 
     private void DecreaseRage()
     {
-        if (timer >= 1)
-        {
-            rage -= 25;
-            if (rage < 0)
-                rage = 0;
-            timer = 0;
-        }
+        rage -= 25 * Time.deltaTime;
+        if (rage < 0)
+            rage = 0;
     }
 
     public bool vulnerable()
@@ -48,7 +44,6 @@ public class Rage_Bar : MonoBehaviour {
 	void Update ()
     {
         //Player's Rage Amount 
-        timer += Time.deltaTime;
         DecreaseRage();
         rage_bar.value = GetRage();
 	}
