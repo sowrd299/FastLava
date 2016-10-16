@@ -47,7 +47,6 @@ public class GameController : MonoBehaviour {
 
     public void LoadLevel()
     {
-        time.resetTime();
         SceneManager.LoadScene("ryantester");
     }
 	

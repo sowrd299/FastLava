@@ -26,11 +26,6 @@ public class Timer : MonoBehaviour {
             dies.Die();
 	}
 
-    public void resetTime()
-    {
-        time_passed = total_time;
-    }
-
     public float getTime()
     {
         return time_passed;
