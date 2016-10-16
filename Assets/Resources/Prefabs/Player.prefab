@@ -58,7 +58,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 66.70333, y: -78.659584, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 360}
   m_Children:
   - {fileID: 4000011341821962}
   m_Father: {fileID: 0}
@@ -116,8 +116,8 @@ Animator:
   m_GameObject: {fileID: 1000011803997344}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e64e57fb74583be49b85d6b75a073134, type: 2}
-  m_CullingMode: 0
+  m_Controller: {fileID: 9100000, guid: 61efff05e43867e49aefca01a71cc0e3, type: 2}
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

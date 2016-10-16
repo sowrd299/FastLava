@@ -88,6 +88,8 @@ public class Dash : MonoBehaviour {
     public void Explode()
     {
         //kill all things near player
+		dashing.SetBool ("spinattack", true);
+		dashing.Play ("spinattack");
         murderAll(Physics2D.OverlapCircleAll(transform.position, explodeRadius));
     }
 
@@ -109,7 +111,8 @@ public class Dash : MonoBehaviour {
 
     private void murderCast(RaycastHit2D[] hits)
     {
-        Collider2D[] r = new Collider2D[hits.Length];
+		
+		Collider2D[] r = new Collider2D[hits.Length];
         for(int i = 0; i < hits.Length; ++i)
         {
             r[i] = hits[i].collider;
