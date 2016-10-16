@@ -45,6 +45,7 @@ public class DiesToLava : MonoBehaviour {
             x.GetComponent<PolygonCollider2D>().bounds.Contains(transform.position);
         }
         wasVulnerable = Vulnerable();
+        
     }
     public bool Die()
     {

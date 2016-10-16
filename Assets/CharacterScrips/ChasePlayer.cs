@@ -10,7 +10,7 @@ public class ChasePlayer : MonoBehaviour {
     private float distanceToPlayer;
     public float runRadius;
     public float speed;
-
+    private bool activated;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -24,12 +24,17 @@ public class ChasePlayer : MonoBehaviour {
 
     void Update()
     {
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer < runRadius)
+        if (!activated)
+        {
+            distanceToPlayer = Vector2.Distance((Vector2)(transform.position), (Vector2)(player.transform.position));
+        } else
         {
             angleToPlayer = getAngleToPlayer();
-            transform.Translate((speed * Mathf.Cos(angleToPlayer)) * Time.deltaTime, (speed * Mathf.Sin(angleToPlayer )) * Time.deltaTime, 0);
-
+            transform.Translate((speed * Mathf.Cos(angleToPlayer)) * Time.deltaTime, (speed * Mathf.Sin(angleToPlayer)) * Time.deltaTime, 0);
+        }
+        if (distanceToPlayer < runRadius && !activated)
+        {
+            activated = true;
         }
 
     }
