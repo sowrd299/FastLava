@@ -14,6 +14,7 @@ public class Dash : MonoBehaviour {
     private float dashDirection;
     private Vector3 moveVector;
     public double timeFromLastKill;
+	public Animator dashing;
    
     private Vector2 angle;
     private bool debug;
@@ -30,13 +31,16 @@ public class Dash : MonoBehaviour {
             dashTimer += 1;
             getBoxCast();
             transform.Translate(moveVector);
-            
+
+
         } 
+
 	}
 
     public void dash(int distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
     {                                                                              //duration = 1 for a single frame dash
-        dashDistance = distance;
+		dashing.Play("DashAnimation");
+		dashDistance = distance;
         dashWidth = 0.30f;
         this.duration = duration;
         dashTimer = 0;
