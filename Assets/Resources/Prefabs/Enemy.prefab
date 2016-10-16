@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013230754892}
   - 212: {fileID: 212000014054516682}
+  - 114: {fileID: 114000011463955368}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -104,6 +105,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &114000011463955368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011456736280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f55c64f1929ec40ac9025a15044a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000011853285668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7e6bf1614ae3b4c8a053b1102cbc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runRadius: 5
+  speed: 1
 --- !u!114 &114000013747789538
 MonoBehaviour:
   m_ObjectHideFlags: 1

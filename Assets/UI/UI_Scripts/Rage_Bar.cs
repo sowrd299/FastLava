@@ -7,7 +7,7 @@ public class Rage_Bar : MonoBehaviour {
     public float InvolThres = 80;
     public Slider rage_bar;
     private float rage;
-    private double timer;
+    public Image fill;
 
     public float GetRage()
     {
@@ -36,12 +36,10 @@ public class Rage_Bar : MonoBehaviour {
 
     void Start ()
     {
-
         rage_bar.maxValue = 100;
         rage_bar.minValue = 0;
         rage = 0;
         rage_bar.value = rage;
-        timer = 0;
     }
 	
 	// Update is called once per frame
@@ -49,6 +47,10 @@ public class Rage_Bar : MonoBehaviour {
     {
         //Player's Rage Amount 
         DecreaseRage();
-        rage_bar.value = GetRage();
-	}
+        rage_bar.value = rage;
+        if (!vulnerable())
+            fill.color = Color.red;
+        else
+            fill.color = Color.cyan;
+    }
 }
