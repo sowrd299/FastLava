@@ -14,7 +14,8 @@ public class CowardAI : MonoBehaviour {
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         angleToPlayer = getAngleToPlayer();
-      
+        runRadius = (float)(runRadius + Random.value * 3 - 1.5);
+        speed = (float)(speed + Random.value * 0.45 - 0.9);
 
     }
 

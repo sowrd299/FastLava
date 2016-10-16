@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 2
-  dashCooldown: 0.4
+  dashCooldown: 0
 --- !u!114 &114000014289698858
 MonoBehaviour:
   m_ObjectHideFlags: 1

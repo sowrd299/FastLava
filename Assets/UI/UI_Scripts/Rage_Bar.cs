@@ -16,12 +16,14 @@ public class Rage_Bar : MonoBehaviour {
 
     private void DecreaseRage()
     {
-        if (false) //rage > InvolThres)
-            rage -= 25 * Time.deltaTime;
+        if (rage > InvolThres)
+            rage -= 20 * Time.deltaTime;
         else
             rage -= 5 * Time.deltaTime;
         if (rage < 0)
             rage = 0;
+        if (rage > 100)
+            rage = 100;
     }
 
     public bool vulnerable()

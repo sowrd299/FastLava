@@ -23,7 +23,7 @@ public class Dash : MonoBehaviour {
 
     Combo combo;
     Rage_Bar rage;
-
+    Score score;
 
 
 	void Start () {
@@ -128,6 +128,8 @@ public class Dash : MonoBehaviour {
         combo.AddCombo(1);
         combo.resetTimer();
 
+        score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
+        score.AddKills(1);
     }
 
     

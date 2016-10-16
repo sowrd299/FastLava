@@ -222,7 +222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 600
+  m_Text: 240
 --- !u!114 &114000011626218406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,7 +322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e070a446381d6d641802344067da7768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InvolThres: 80
   rage_bar: {fileID: 114000014013990574}
+  fill: {fileID: 0}
 --- !u!114 &114000013010627104
 MonoBehaviour:
   m_ObjectHideFlags: 1

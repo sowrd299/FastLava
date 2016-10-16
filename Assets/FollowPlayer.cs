@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour {
                 //if nearby, snap
                 return 1;
             }
-            return (1f / 7f);
+            return (1f / 9f);
         }
     }
 
