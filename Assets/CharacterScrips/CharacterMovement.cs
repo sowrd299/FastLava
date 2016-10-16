@@ -5,6 +5,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	public float playerSpeed = 10f;
     public float dashCooldown;
+    public float explodeCoolDown;
     private float cooldownTimer;
     Rage_Bar rage;
     private float dashDistance;
@@ -50,6 +51,7 @@ public class CharacterMovement : MonoBehaviour {
             }
             else if (Input.GetKeyDown("space"))
             {
+                cooldownTimer = explodeCoolDown;
                 GetComponent<Dash>().Explode();
             }
         }
