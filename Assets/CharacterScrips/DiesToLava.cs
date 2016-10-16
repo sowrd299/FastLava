@@ -11,7 +11,7 @@ public class DiesToLava : MonoBehaviour {
     {
         rb = GameObject.FindGameObjectWithTag("RageBar").GetComponent<Rage_Bar>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        wasVulnerable = true;
+        wasVulnerable = false;
     }
 
     void OnTriggerEnter2D(Collider2D c)
@@ -42,9 +42,14 @@ public class DiesToLava : MonoBehaviour {
         if(Vulnerable() && !wasVulnerable)
         {
             GameObject x = GameObject.FindGameObjectWithTag("Lava");
-            x.GetComponent<PolygonCollider2D>().bounds.Contains(transform.position);
+            Debug.Log(x);
+            if (x.GetComponent<PolygonCollider2D>().bounds.Contains(transform.position))
+            {
+                Die();
+            }
         }
         wasVulnerable = Vulnerable();
+        
     }
     public bool Die()
     {
