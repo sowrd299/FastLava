@@ -15,8 +15,15 @@ public class Dash : MonoBehaviour {
     public float explodeRadius = 3;
     private Vector3 moveVector;
     public double timeFromLastKill;
+
+	public Animator dashing;
+   
+    private Vector2 angle;
+    private bool debug;
+
     Combo combo;
     Rage_Bar rage;
+
 
 
 	void Start () {
@@ -34,22 +41,27 @@ public class Dash : MonoBehaviour {
             transform.Translate(moveVector);
             boxCastAroundPlayer();
             
+
         } 
+
 	}
 
+
     public void dash(float distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
-    {
-        //duration = 1 for a single frame dash
-        
-        dashDistance = distance;
-        
+    {                                                                              //duration = 1 for a single frame dash
+		dashing.Play("DashAnimation");
+		dashDistance = distance;
+        dashWidth = 0.30f;
+
+   
+
         this.duration = duration;
         dashTimer = 0;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float xDiff = mousePos.x - transform.position.x;
         float yDiff = mousePos.y - transform.position.y;
     
-
+        
 
         dashDirection = getAngle(xDiff, yDiff);
         dashSpeed = dashDistance;
