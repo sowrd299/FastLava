@@ -42,7 +42,7 @@ public class Dash : MonoBehaviour {
         //duration = 1 for a single frame dash
         
         dashDistance = distance;
-        dashWidth = 0.1f;
+        
         this.duration = duration;
         dashTimer = 0;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
