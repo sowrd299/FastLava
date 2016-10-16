@@ -33,10 +33,10 @@ public class CowardAI : MonoBehaviour {
             transform.Translate((speed * Mathf.Cos(angleToPlayer+Mathf.PI)) *Time.deltaTime, (speed * Mathf.Sin(angleToPlayer+Mathf.PI))*Time.deltaTime,0);
             if(fireTimer > 0)
             {
-                fireTimer--;
+                fireTimer-= Time.deltaTime;
             } else
             {
-                GameObject bullet = Instantiate(Resources.Load("Prefabs/Bulle") as GameObject);
+                GameObject bullet = Instantiate(Resources.Load("Prefabs/Bullet") as GameObject);
                 bullet.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer), polarY(0.5f, angleToPlayer),0);
                 bullet.GetComponent<BulletMovement>().setDirection(angleToPlayer);
                 bullet.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
@@ -44,6 +44,12 @@ public class CowardAI : MonoBehaviour {
                 fireTimer = fireRate;
             }
         }
+
+    }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Lava")
+            Destroy(gameObject);
 
     }
     public float getAngleToPlayer()  //returns the angle from a given xDiff and yDiff
