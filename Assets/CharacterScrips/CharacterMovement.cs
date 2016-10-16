@@ -21,7 +21,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        dashDistance = (float)(0.07 * rage.GetRage() + 0.5);
+        dashDistance = (float)(0.035 * rage.GetRage() + 2.0);
 		Movement ();
 
 	}

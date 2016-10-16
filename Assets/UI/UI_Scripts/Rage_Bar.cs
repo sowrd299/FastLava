@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Rage_Bar : MonoBehaviour {
 
+    public float InvolThres = 90;
     public Slider rage_bar;
     private float rage;
     private double timer;
@@ -15,7 +16,7 @@ public class Rage_Bar : MonoBehaviour {
 
     private void DecreaseRage()
     {
-        if (rage > 60)
+        if (rage > InvolThres)
             rage -= 25 * Time.deltaTime;
         else
             rage -= 5 * Time.deltaTime;
@@ -25,7 +26,7 @@ public class Rage_Bar : MonoBehaviour {
 
     public bool vulnerable()
     {
-        return rage < 60;
+        return rage < InvolThres;
     }
 
     public void AddRage(int x)

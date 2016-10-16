@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashWidth: 0
+  explodeRadius: 1.75
   timeFromLastKill: 0
 --- !u!124 &124000011727236952
 Behaviour:
