@@ -43,7 +43,8 @@ public class DiesToLava : MonoBehaviour {
         {
             GameObject x = GameObject.FindGameObjectWithTag("Lava");
             Debug.Log(x);
-            if (x.GetComponent<PolygonCollider2D>().bounds.Contains(transform.position))
+            Collider2D overlaps = Physics2D.OverlapCircle(transform.position, 0.25f);
+            if (overlaps.gameObject.tag == "Lava")//(x.GetComponent<PolygonCollider2D>().bounds.Contains(transform.position))
             {
                 Die();
             }
