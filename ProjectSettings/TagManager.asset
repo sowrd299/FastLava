@@ -13,6 +13,7 @@ TagManager:
   - Rage Bar
   - Victory
   - Score
+  - Timer
   layers:
   - Default
   - TransparentFX
