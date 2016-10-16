@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Rage_Bar : MonoBehaviour {
 
-    public float InvolThres = 90;
+    public float InvolThres = 80;
     public Slider rage_bar;
     private float rage;
     private double timer;
@@ -16,7 +16,7 @@ public class Rage_Bar : MonoBehaviour {
 
     private void DecreaseRage()
     {
-        if (rage > InvolThres)
+        if (false) //rage > InvolThres)
             rage -= 25 * Time.deltaTime;
         else
             rage -= 5 * Time.deltaTime;
