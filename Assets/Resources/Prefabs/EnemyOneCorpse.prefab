@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012160849736}
   - 212: {fileID: 212000012031103444}
+  - 114: {fileID: 114000013185235510}
   m_Layer: 0
   m_Name: EnemyOneCorpse
   m_TagString: Untagged
@@ -40,6 +41,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000013185235510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012951293990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b883014bcb16c842bb321a457b79197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000012031103444
 SpriteRenderer:
   m_ObjectHideFlags: 1
