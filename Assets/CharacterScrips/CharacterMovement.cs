@@ -16,7 +16,6 @@ public class CharacterMovement : MonoBehaviour {
         cooldownTimer = 0;
         
         rage = GameObject.FindGameObjectWithTag("RageBar").GetComponent<Rage_Bar>();
-        print(rage.GetType());
 
     }
 
