@@ -6,13 +6,13 @@ public class CowardAI : MonoBehaviour {
     // Use this for initialization
     private GameObject player;
     private Vector2 playerLocation;
-    private double angleToPlayer;
+    private float angleToPlayer;
     private float distanceToPlayer;
     public float runRadius;
     public float speed;
 
 	void Start () {
-	    player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rage_Bar>();
+	    player = GameObject.FindGameObjectWithTag("Player").GetComponent<GameObject>();
         angleToPlayer = getAngleToPlayer();
         speed = 0.5f;
         
@@ -26,7 +26,7 @@ public class CowardAI : MonoBehaviour {
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if(distanceToPlayer < runRadius)
         {
-            Transform.translate(speed * Mathf.Cos(angleToPlayer + Mathf.PI / 2), speed * Mathf.Sin(angleToPlayer + Mathf.PI / 2),0);
+            transform.Translate(speed * Mathf.Cos(angleToPlayer + Mathf.PI / 2), speed * Mathf.Sin(angleToPlayer + Mathf.PI / 2),0);
 
         }
     }
@@ -35,7 +35,7 @@ public class CowardAI : MonoBehaviour {
         playerLocation = player.transform.position;
         float xDiff = playerLocation.x - transform.position.x;
         float yDiff = playerLocation.y - transform.position.y;
-        angleToPlayer = getAngleToPlayer(xDiff, yDiff);
+        
         return (float)(System.Math.Atan2(yDiff, xDiff));
     }
 }
