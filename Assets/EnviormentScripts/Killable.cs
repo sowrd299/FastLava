@@ -26,11 +26,15 @@ public class Killable : MonoBehaviour {
         {
             go = Instantiate(Resources.Load("Prefabs/EnemyCorpse") as GameObject);
             go.transform.position = gameObject.transform.position;
+            //go.GetComponent<RotateToAngle>().setAngle(transform.GetComponent<SpriteRenderer>().transform.rotation);
+            go.transform.rotation = transform.GetComponent<SpriteRenderer>().transform.rotation;
         }
         else if (gameObject.name.Equals("EnemyOne(Clone)"))
         {
             go = Instantiate(Resources.Load("Prefabs/EnemyOneCorpse") as GameObject);
             go.transform.position = gameObject.transform.position;
+            //go.GetComponent<RotateToAngle>().setAngle(transform.GetComponent<SpriteRenderer>().transform.rotation);
+            go.transform.rotation = transform.GetComponent<SpriteRenderer>().transform.rotation;
         }
     }
 
