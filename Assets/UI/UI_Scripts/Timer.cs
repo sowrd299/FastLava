@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
+    public float total_time = 120;
     private float time_passed;
     public Text timer;
 
@@ -17,7 +18,12 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        time_passed = 240 - Time.time;
+        time_passed =  total_time - Time.time;
         timer.text = time_passed.ToString();
 	}
+
+    public float getTime()
+    {
+        return time_passed;
+    }
 }

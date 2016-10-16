@@ -24,4 +24,9 @@ public class Score : MonoBehaviour {
     {
         kills.text = killValue + " Kills";
 	}
+
+    public int getKills()
+    {
+        return killValue;
+    }
 }

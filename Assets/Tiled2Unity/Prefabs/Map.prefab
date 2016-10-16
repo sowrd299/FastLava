@@ -102,7 +102,7 @@ GameObject:
   - 61: {fileID: 61000011283444430}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - 61: {fileID: 61000010874081174}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,7 @@ GameObject:
   - 61: {fileID: 61000010135800824}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -821,7 +821,7 @@ GameObject:
   - 61: {fileID: 61000012679637082}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1077,7 +1077,7 @@ GameObject:
   - 61: {fileID: 61000010282095708}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,7 +1093,7 @@ GameObject:
   - 61: {fileID: 61000014027875724}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1397,7 +1397,7 @@ GameObject:
   - 61: {fileID: 61000011422820974}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1620,7 +1620,7 @@ GameObject:
   - 61: {fileID: 61000010089031004}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1732,7 +1732,7 @@ GameObject:
   - 61: {fileID: 61000012326705254}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1946,7 +1946,7 @@ GameObject:
   - 61: {fileID: 61000012311013024}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1994,7 +1994,7 @@ GameObject:
   - 61: {fileID: 61000012608832506}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2058,7 +2058,7 @@ GameObject:
   - 60: {fileID: 60000013268425552}
   m_Layer: 0
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Victory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2074,7 +2074,7 @@ GameObject:
   - 61: {fileID: 61000010381474640}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2506,7 +2506,7 @@ GameObject:
   - 61: {fileID: 61000012127685056}
   m_Layer: 0
   m_Name: RectangleObject
-  m_TagString: Untagged
+  m_TagString: EnemyStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2602,7 +2602,7 @@ GameObject:
   - 60: {fileID: 60000014075713470}
   m_Layer: 0
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5635,7 +5635,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -5665,7 +5665,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
