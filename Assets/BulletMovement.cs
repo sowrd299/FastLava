@@ -10,11 +10,11 @@ public class BulletMovement : MonoBehaviour {
     private Vector3 moveVector;
     Camera cam;
 	void Start () {
-        
+
         GameObject tempObject = GameObject.FindGameObjectWithTag("MainCamera");
         cam = tempObject.GetComponent<Camera>();
-        
-	}
+
+    }
 
     // Update is called once per frame
     void Update() {

@@ -17,4 +17,5 @@ public class FacePlayer : MonoBehaviour {
         Vector2 playerPos = player.transform.position;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2((  playerPos.y-transform.position.y), ( playerPos.x- transform.position.x )) * Mathf.Rad2Deg - 90);
     }
+    
 }
