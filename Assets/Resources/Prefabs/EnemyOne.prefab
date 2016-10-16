@@ -121,7 +121,7 @@ MonoBehaviour:
   speed: 1
   fireRate: 0.4
   fireTimer: 0
-  bulletSpeed: 6
+  bulletSpeed: 10
 --- !u!114 &114000012126908608
 MonoBehaviour:
   m_ObjectHideFlags: 1
