@@ -119,9 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runRadius: 5
   speed: 1
-  fireRate: 3
+  fireRate: 0.4
   fireTimer: 0
-  bulletSpeed: 1
+  bulletSpeed: 6
 --- !u!114 &114000012126908608
 MonoBehaviour:
   m_ObjectHideFlags: 1
