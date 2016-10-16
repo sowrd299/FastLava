@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
@@ -43,5 +44,10 @@ public class GameController : MonoBehaviour {
                 ((int)(time.total_time - time.getTime())).ToString() + " SECONDS";
                 //"TEST";
     }   
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("ryantester");
+    }
 	
 }
