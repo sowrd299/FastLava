@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour {
             endui.GetComponentInChildren<Text>().text = "YOU KILLED THEM ALL";
         }
         //score posting
-        endui.transform.FindChild("LittleText").GetComponent<Text>().text =
+        endui.transform.FindChild("Text").FindChild("LittleText").GetComponent<Text>().text =
                 score.getKills().ToString() + " KILLS IN " +
                 ((int)(time.total_time - time.getTime())).ToString() + " SECONDS";
                 //"TEST";

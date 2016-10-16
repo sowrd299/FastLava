@@ -17,9 +17,9 @@ public class Rage_Bar : MonoBehaviour {
     private void DecreaseRage()
     {
         if (rage > InvolThres)
-            rage -= 20 * Time.deltaTime;
+            rage -= 7.5f * Time.deltaTime;
         else
-            rage -= 5 * Time.deltaTime;
+            rage -= 2.5f * Time.deltaTime;
         if (rage < 0)
             rage = 0;
         if (rage > 100)
@@ -51,7 +51,7 @@ public class Rage_Bar : MonoBehaviour {
         DecreaseRage();
         rage_bar.value = rage;
         if (!vulnerable())
-            fill.color = Color.red;
+            fill.color = new Color(1, 0.5f * (100 - rage) / (100 - InvolThres), 0);///Color.red;
         else
             fill.color = Color.cyan;
     }
