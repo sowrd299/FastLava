@@ -27,8 +27,22 @@ public class Dash : MonoBehaviour {
 
 
 	void Start () {
-        dash(0,1); //instantiates variables
-        
+        dashDistance = 0;
+        dashWidth = 0.30f;
+
+        this.duration = 0;
+        dashTimer = 0;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float xDiff = mousePos.x - transform.position.x;
+        float yDiff = mousePos.y - transform.position.y;
+
+
+
+        dashDirection = getAngle(xDiff, yDiff);
+        dashSpeed = dashDistance;
+
+
+        moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection), dashSpeed * Mathf.Sin(dashDirection), 0);
     }
 	
 	// Update is called once per frame
