@@ -49,7 +49,7 @@ public class Dash : MonoBehaviour {
         float xDiff = mousePos.x - transform.position.x;
         float yDiff = mousePos.y - transform.position.y;
     
-
+        
 
         dashDirection = getAngle(xDiff, yDiff);
         dashSpeed = dashDistance;

@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 2
-  dashCooldown: 0
+  dashCooldown: 0.4
 --- !u!114 &114000010927432858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2cd6ce461806e4f863f6002ba76732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashWidth: 0
+  dashWidth: 0.1
+  explodeRadius: 3
   timeFromLastKill: 0
 --- !u!124 &124000011727236952
 Behaviour:
