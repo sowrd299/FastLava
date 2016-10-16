@@ -76,7 +76,8 @@ public class Dash : MonoBehaviour {
 
     public void dash(float distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
     {                                                                              //duration = 1 for a single frame dash
-		dashing.Play("DashAnimation");
+		dashing.SetBool("dashbool", true);
+		dashing.Play("dashattack");
 		dashDistance = distance;
         dashWidth = 0.30f;
 
@@ -93,6 +94,7 @@ public class Dash : MonoBehaviour {
 
         
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection),  dashSpeed * Mathf.Sin(dashDirection),0);
+		dashing.SetBool ("dashbool", false);
         
        //ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
         //killEnemies(enemyList);
@@ -101,10 +103,11 @@ public class Dash : MonoBehaviour {
     public void Explode()
     {
         //kill all things near player
-		dashing.SetBool ("spinattack", true);
+		dashing.SetBool ("spinbool", true);
         faceMouse.enabled = false;
 		dashing.Play ("spinattack");
         murderAll(Physics2D.OverlapCircleAll(transform.position, explodeRadius));
+		dashing.SetBool ("spinbool", false);
     }
 
     public void getBoxCast()

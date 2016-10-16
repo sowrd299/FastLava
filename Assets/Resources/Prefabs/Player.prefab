@@ -56,9 +56,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011803997344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.70333, y: -78.659584, z: 0}
+  m_LocalPosition: {x: 66.3749, y: -78.65677, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_Children:
   - {fileID: 4000011341821962}
   m_Father: {fileID: 0}
@@ -69,7 +69,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010058362224}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.62081015, w: 0.78396094}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,10 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2cd6ce461806e4f863f6002ba76732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashWidth: 0.03
+  dashWidth: 0.3
   explodeRadius: 1.75
   timeFromLastKill: 0
   dashing: {fileID: 95000013060429612}
+  faceMouse: {fileID: 114000014289698858}
 --- !u!114 &114000014131780184
 MonoBehaviour:
   m_ObjectHideFlags: 1
