@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        time_passed = 600 - Time.time;
+        time_passed = 240 - Time.time;
         timer.text = time_passed.ToString();
 	}
 }
