@@ -296,7 +296,7 @@ Prefab:
     - target: {fileID: 82000013680978546, guid: b360f4747b25f5343aaf99d06774b63d,
         type: 2}
       propertyPath: m_Volume
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b360f4747b25f5343aaf99d06774b63d, type: 2}
@@ -407,6 +407,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012907598606, guid: c38f1946baff6554fb3c8fe03828626e,
+        type: 2}
+      propertyPath: InvolThres
+      value: 85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c38f1946baff6554fb3c8fe03828626e, type: 2}
