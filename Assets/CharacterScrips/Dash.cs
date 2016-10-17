@@ -73,7 +73,6 @@ public class Dash : MonoBehaviour {
         else
         {
             Debug.Log("Allowing to continue to play animation.");
-
         }
 
 	}
