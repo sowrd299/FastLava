@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014291950798}
   - 212: {fileID: 212000010783435760}
-  - 114: {fileID: 114000010774114154}
   m_Layer: 0
   m_Name: 147666459199041 (1)
   m_TagString: Untagged
@@ -86,18 +85,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
---- !u!114 &114000010774114154
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010849827298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f158b6a8615ac874f8aa35d16625e04a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spinSpeed: 360
 --- !u!114 &114000013870632704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1553089563
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 42f0a082f7efdae4089f2c161d9be3f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21a4877741643af4fb5ed1175a2171f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
