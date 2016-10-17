@@ -50,5 +50,19 @@ public class GameController : MonoBehaviour {
     {
         SceneManager.LoadScene("ryantester");
     }
-	
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
