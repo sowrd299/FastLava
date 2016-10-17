@@ -17,7 +17,7 @@ public class Dash : MonoBehaviour {
     public double timeFromLastKill;
 
 	public Animator dashing;
-    public FaceMouse faceMouse;
+    //public FaceMouse faceMouse;
     private int idleAnimeState;
    
     private Vector2 angle;
@@ -43,7 +43,8 @@ public class Dash : MonoBehaviour {
         dashDirection = getAngle(xDiff, yDiff);
         dashSpeed = dashDistance;
 
-        faceMouse = transform.GetComponentInChildren<FaceMouse>();
+        //faceMouse = transform.GetComponentInChildren<FaceMouse>();
+        //faceMouse.enabled = true;
         idleAnimeState = dashing.GetCurrentAnimatorStateInfo(0).fullPathHash;
 
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection), dashSpeed * Mathf.Sin(dashDirection), 0);
@@ -63,7 +64,8 @@ public class Dash : MonoBehaviour {
         }
         if (dashing.GetCurrentAnimatorStateInfo(0).fullPathHash == idleAnimeState)
         {
-            faceMouse.enabled = true;
+            //faceMouse.enabled = true;
+            
             Debug.Log("Canceling animaition");
         }
         else
@@ -104,7 +106,7 @@ public class Dash : MonoBehaviour {
     {
         //kill all things near player
 		dashing.SetBool ("spinbool", true);
-        faceMouse.enabled = false;
+        //faceMouse.enabled = false;
 		dashing.Play ("spinattack");
         murderAll(Physics2D.OverlapCircleAll(transform.position, explodeRadius));
 		dashing.SetBool ("spinbool", false);
