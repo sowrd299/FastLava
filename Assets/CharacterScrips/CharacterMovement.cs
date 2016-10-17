@@ -10,6 +10,8 @@ public class CharacterMovement : MonoBehaviour {
     Rage_Bar rage;
     private float dashDistance;
     private bool playAgainNextFrame;
+    AudioSource source;
+    public AudioClip bootUp;
 	// Use this for initialization
 	void Start () {
         
@@ -17,7 +19,8 @@ public class CharacterMovement : MonoBehaviour {
         cooldownTimer = 0;
         playAgainNextFrame = false;
         rage = GameObject.FindGameObjectWithTag("RageBar").GetComponent<Rage_Bar>();
-
+        source = GetComponent<AudioSource>();
+        source.PlayOneShot(bootUp);
     }
 
 	// Update is called once per frame

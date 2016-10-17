@@ -27,7 +27,10 @@ public class Dash : MonoBehaviour {
     Combo combo;
     Rage_Bar rage;
     Score score;
-
+    private AudioSource source;
+    public AudioClip dashSlice;
+    public AudioClip spinSlice;
+    public AudioClip whoosh;
 
 	void Start () {
         dashDistance = 0;
@@ -52,7 +55,8 @@ public class Dash : MonoBehaviour {
         dashing.enabled = true;
         boolSpin = false;
         boolDash = false;
-        
+        source = GetComponent<AudioSource>();
+        source.volume = 0.6f;
     }
 	
 	// Update is called once per frame
@@ -67,7 +71,6 @@ public class Dash : MonoBehaviour {
             transform.Translate(moveVector);
             boxCastAroundPlayer();
             
-
         }
         if (dashing.GetCurrentAnimatorStateInfo(0).fullPathHash == idleAnimeState)
         {
@@ -116,6 +119,11 @@ public class Dash : MonoBehaviour {
         //dashing.enabled = true;
         //faceMouse.enabled = true;
         boolDash = true;
+    
+        source.PlayOneShot(whoosh);
+        
+        source.PlayOneShot(dashSlice);
+        
 		dashing.SetBool("dashbool", true);
        
 		dashing.Play("dashattack");
@@ -145,6 +153,8 @@ public class Dash : MonoBehaviour {
     {
         //kill all things near player
         boolSpin = true;
+        source.PlayOneShot(spinSlice);
+        
         dashing.enabled = true;
         
 		dashing.SetBool ("spinbool", true);
