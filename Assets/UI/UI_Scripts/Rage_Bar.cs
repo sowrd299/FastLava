@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Rage_Bar : MonoBehaviour {
 
-    public float InvolThres = 80;
+    public float InvolThres = 85;
     public Slider rage_bar;
     private float rage;
     public Image fill;
