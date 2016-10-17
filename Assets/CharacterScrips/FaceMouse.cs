@@ -9,8 +9,8 @@ public class FaceMouse : MonoBehaviour {
         
         
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-      
-        print(transform.position);
+
+        print(transform.rotation);
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2((mousePos.y - transform.position.y), (mousePos.x - transform.position.x)) * Mathf.Rad2Deg - 90);
-	}
+    }
 }
