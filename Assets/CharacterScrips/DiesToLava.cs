@@ -8,12 +8,15 @@ public class DiesToLava : MonoBehaviour {
     GameController gc;
     private bool wasVulnerable;
     private bool amDead;
+    private AudioSource source;
+    public AudioClip death;
     void Start()
     {
         rb = GameObject.FindGameObjectWithTag("RageBar").GetComponent<Rage_Bar>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         wasVulnerable = false;
         amDead = false;
+        source = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D c)
@@ -25,6 +28,8 @@ public class DiesToLava : MonoBehaviour {
                 GameObject go = Instantiate(Resources.Load("Prefabs/AnimatedFire") as GameObject);
                 go.transform.position = gameObject.transform.position;
                 go.GetComponent<SpriteRenderer>().sortingLayerName = "AbovePlayer";
+                source.PlayOneShot(death);
+
             }
             Die();
         }
@@ -42,6 +47,8 @@ public class DiesToLava : MonoBehaviour {
                 GameObject go = Instantiate(Resources.Load("Prefabs/AnimatedFire") as GameObject);
                 go.transform.position = gameObject.transform.position;
                 go.GetComponent<SpriteRenderer>().sortingLayerName = "AbovePlayer";
+                source.PlayOneShot(death);
+
             }
             Die();
             
@@ -67,7 +74,7 @@ public class DiesToLava : MonoBehaviour {
                     GameObject go = Instantiate(Resources.Load("Prefabs/AnimatedFire") as GameObject);
                     go.transform.position = gameObject.transform.position;
                     go.GetComponent<SpriteRenderer>().sortingLayerName = "AbovePlayer";
-                    
+                    source.PlayOneShot(death);
                 }
                 Die();
             }
@@ -80,6 +87,7 @@ public class DiesToLava : MonoBehaviour {
     {
         ///returns true if player dies.
         Debug.Log("I am dead!");
+        
         gc.End(false);
         amDead = true;
         return true;
