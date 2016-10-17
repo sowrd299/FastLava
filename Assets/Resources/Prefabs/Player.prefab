@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011341821962}
   - 212: {fileID: 212000012788625892}
-  - 114: {fileID: 114000014289698858}
+  - 114: {fileID: 114000010463580986}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -72,7 +72,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0.62081015, w: 0.78396094}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 360}
   m_Children: []
   m_Father: {fileID: 4000011134476594}
   m_RootOrder: 0
@@ -124,6 +124,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010463580986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010058362224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3204ebfe32530994a9ba83424af9c22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010682694878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,7 +161,7 @@ MonoBehaviour:
   explodeRadius: 1.75
   timeFromLastKill: 0
   dashing: {fileID: 95000013060429612}
-  faceMouse: {fileID: 114000014289698858}
+  faceMouse: {fileID: 0}
 --- !u!114 &114000014131780184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,17 +176,6 @@ MonoBehaviour:
   playerSpeed: 2
   dashCooldown: 0
   explodeCoolDown: 0.5
---- !u!114 &114000014289698858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010058362224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3204ebfe32530994a9ba83424af9c22f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212000012788625892
 SpriteRenderer:
   m_ObjectHideFlags: 1
