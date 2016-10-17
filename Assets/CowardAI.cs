@@ -47,16 +47,21 @@ public class CowardAI : MonoBehaviour {
                 bullet.GetComponent<BulletMovement>().setDirection(angleToPlayer);
                 bullet.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
                 bullet.GetComponent<BulletMovement>().calculateMoveVector();
+                bullet.GetComponent<RotateToAngle>().setAngle(transform.rotation);
                 GameObject bullet2 = Instantiate(Resources.Load("Prefabs/Bullet") as GameObject);
                 bullet2.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer - Mathf.PI / 8), polarY(0.5f, angleToPlayer - Mathf.PI / 8), 0);
                 bullet2.GetComponent<BulletMovement>().setDirection(angleToPlayer+Mathf.PI/8);
                 bullet2.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
                 bullet2.GetComponent<BulletMovement>().calculateMoveVector();
+                bullet2.GetComponent<RotateToAngle>().setAngle(transform.rotation);
+
                 GameObject bullet3 = Instantiate(Resources.Load("Prefabs/Bullet") as GameObject);
                 bullet3.transform.position = transform.position + new Vector3(polarX(0.5f, angleToPlayer - Mathf.PI / 8), polarY(0.5f, angleToPlayer - Mathf.PI / 8), 0);
                 bullet3.GetComponent<BulletMovement>().setDirection(angleToPlayer - Mathf.PI / 8);
                 bullet3.GetComponent<BulletMovement>().setSpeed(bulletSpeed);
                 bullet3.GetComponent<BulletMovement>().calculateMoveVector();
+                bullet3.GetComponent<RotateToAngle>().setAngle(transform.rotation);
+
                 fireTimer = fireRate;
             }
         }
