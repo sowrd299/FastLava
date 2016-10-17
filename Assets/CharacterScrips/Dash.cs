@@ -56,7 +56,7 @@ public class Dash : MonoBehaviour {
         boolSpin = false;
         boolDash = false;
         source = GetComponent<AudioSource>();
-        source.volume = 0.6f;
+        
     }
 	
 	// Update is called once per frame
