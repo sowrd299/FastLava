@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014291950798}
   - 212: {fileID: 212000010783435760}
+  - 114: {fileID: 114000012124154466}
   m_Layer: 0
   m_Name: 147666459199041 (1)
   m_TagString: Untagged
@@ -37,7 +38,6 @@ GameObject:
   - 4: {fileID: 4000013655095764}
   - 61: {fileID: 61000014101807160}
   - 114: {fileID: 114000013870632704}
-  - 114: {fileID: 114000013714217480}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -86,12 +86,12 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
---- !u!114 &114000013714217480
+--- !u!114 &114000012124154466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013020653750}
+  m_GameObject: {fileID: 1000010849827298}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8cf0bbff2a52b343a86c75d2e392c91, type: 3}
