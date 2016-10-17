@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour {
         //set a display message
         if (victory)
         {
+            Debug.Log("You won!");
             endui.GetComponentInChildren<Text>().text = "YOU KILLED THEM ALL";
         }
         //score posting
