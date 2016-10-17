@@ -17,7 +17,7 @@ public class Dash : MonoBehaviour {
     public double timeFromLastKill;
 
 	public Animator dashing;
-    public FaceMouse faceMouse;
+    //public FaceMouse faceMouse;
     private int idleAnimeState;
    
     private Vector2 angle;
@@ -43,10 +43,12 @@ public class Dash : MonoBehaviour {
         dashDirection = getAngle(xDiff, yDiff);
         dashSpeed = dashDistance;
 
-        faceMouse = transform.GetComponentInChildren<FaceMouse>();
+        //faceMouse = transform.GetComponentInChildren<FaceMouse>();
+        //faceMouse.enabled = true;
         idleAnimeState = dashing.GetCurrentAnimatorStateInfo(0).fullPathHash;
 
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection), dashSpeed * Mathf.Sin(dashDirection), 0);
+        dashing.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -63,19 +65,23 @@ public class Dash : MonoBehaviour {
         }
         if (dashing.GetCurrentAnimatorStateInfo(0).fullPathHash == idleAnimeState)
         {
-            faceMouse.enabled = true;
+            //faceMouse.enabled = true;
+            dashing.enabled = false;
             Debug.Log("Canceling animaition");
+
         }
         else
         {
             Debug.Log("Allowing to continue to play animation.");
+
         }
 
 	}
 
 
     public void dash(float distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
-    {                                                                              //duration = 1 for a single frame dash
+    {                        //duration = 1 for a single frame dash
+        dashing.enabled = true;
 		dashing.SetBool("dashbool", true);
 		dashing.Play("dashattack");
 		dashDistance = distance;
@@ -95,7 +101,7 @@ public class Dash : MonoBehaviour {
         
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection),  dashSpeed * Mathf.Sin(dashDirection),0);
 		dashing.SetBool ("dashbool", false);
-        
+        dashing.enabled = false;
        //ArrayList enemyList = getCollisions((int)dashDistance, dashDirection, dashWidth);
         //killEnemies(enemyList);
     }
@@ -103,11 +109,14 @@ public class Dash : MonoBehaviour {
     public void Explode()
     {
         //kill all things near player
+        dashing.enabled = true;
 		dashing.SetBool ("spinbool", true);
-        faceMouse.enabled = false;
+        //faceMouse.enabled = false;
+        
 		dashing.Play ("spinattack");
         murderAll(Physics2D.OverlapCircleAll(transform.position, explodeRadius));
 		dashing.SetBool ("spinbool", false);
+        dashing.enabled = false;
     }
 
     public void getBoxCast()
