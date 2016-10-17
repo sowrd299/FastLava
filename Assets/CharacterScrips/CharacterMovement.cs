@@ -9,13 +9,13 @@ public class CharacterMovement : MonoBehaviour {
     private float cooldownTimer;
     Rage_Bar rage;
     private float dashDistance;
-
+    private bool playAgainNextFrame;
 	// Use this for initialization
 	void Start () {
         
         dashDistance = 0;
         cooldownTimer = 0;
-        
+        playAgainNextFrame = false;
         rage = GameObject.FindGameObjectWithTag("RageBar").GetComponent<Rage_Bar>();
 
     }
@@ -29,7 +29,11 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Movement() {
 		float translation = Time.deltaTime * playerSpeed;
-
+        if (playAgainNextFrame)
+        {
+            GetComponent<Dash>().Explode();
+            playAgainNextFrame = false;
+        }
 		if (Input.GetKey("w"))
 			transform.Translate(0, translation, 0);
 		if (Input.GetKey("a"))
@@ -53,6 +57,7 @@ public class CharacterMovement : MonoBehaviour {
             {
                 cooldownTimer = explodeCoolDown;
                 GetComponent<Dash>().Explode();
+                playAgainNextFrame = true;
             }
         }
         

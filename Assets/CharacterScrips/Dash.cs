@@ -19,10 +19,11 @@ public class Dash : MonoBehaviour {
 	public Animator dashing;
     public FaceMouse faceMouse;
     private int idleAnimeState;
-   
+    private bool boolSpin;
     private Vector2 angle;
     private bool debug;
-
+    
+    private bool boolDash;
     Combo combo;
     Rage_Bar rage;
     Score score;
@@ -44,18 +45,25 @@ public class Dash : MonoBehaviour {
         dashSpeed = dashDistance;
 
         faceMouse = transform.GetComponentInChildren<FaceMouse>();
+        faceMouse.enabled = true;
         idleAnimeState = dashing.GetCurrentAnimatorStateInfo(0).fullPathHash;
 
         moveVector = new Vector3(dashSpeed * Mathf.Cos(dashDirection), dashSpeed * Mathf.Sin(dashDirection), 0);
+        dashing.enabled = true;
+        boolSpin = false;
+        boolDash = false;
+        
     }
 	
 	// Update is called once per frame
-	void Update () {    
+	void Update () {
+        
 	    if(dashTimer < duration)
         {
             dashTimer += 1;
             getBoxCast();
             boxCastAroundPlayer();
+            
             transform.Translate(moveVector);
             boxCastAroundPlayer();
             
@@ -63,20 +71,53 @@ public class Dash : MonoBehaviour {
         }
         if (dashing.GetCurrentAnimatorStateInfo(0).fullPathHash == idleAnimeState)
         {
+            //faceMouse.enabled = true;
+            //dashing.SetBool("dashbool", false);
+            //dashing.SetBool("spinbool", false);
+            print("NOT ANIMATED");
+            boolSpin = false;
+            boolDash = false;
             faceMouse.enabled = true;
+            //dashing.enabled = false;
+
             Debug.Log("Canceling animaition");
+            
         }
         else
         {
             Debug.Log("Allowing to continue to play animation.");
+            //dashing.enabled = true;
+            //faceMouse.enabled = false;
+            
+            if (boolSpin)
+            {
+                print("SPINNING");
+                faceMouse.enabled = false;
+            } else
+            {
+                print("DASHING");
+                faceMouse.enabled = true;
+            }
+           /*
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                print(transform.rotation.eulerAngles);
+                //transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2((mousePos.y - transform.position.y), (mousePos.x - transform.position.x)) * Mathf.Rad2Deg - 90);
+                GetComponentInChildren<FaceMouse>().setAngle(Quaternion.Euler(0, 0, Mathf.Atan2((mousePos.y - transform.position.y), (mousePos.x - transform.position.x)) * Mathf.Rad2Deg - 90));
+*/
+           
+
         }
 
 	}
 
 
     public void dash(float distance, int duration)        //call this to dash in a direction for a distance in a certain time.  
-    {                                                                              //duration = 1 for a single frame dash
+    {                        //duration = 1 for a single frame dash
+        //dashing.enabled = true;
+        //faceMouse.enabled = true;
+        boolDash = true;
 		dashing.SetBool("dashbool", true);
+       
 		dashing.Play("dashattack");
 		dashDistance = distance;
         dashWidth = 0.30f;
@@ -103,11 +144,16 @@ public class Dash : MonoBehaviour {
     public void Explode()
     {
         //kill all things near player
+        boolSpin = true;
+        dashing.enabled = true;
+        
 		dashing.SetBool ("spinbool", true);
         faceMouse.enabled = false;
+        
 		dashing.Play ("spinattack");
         murderAll(Physics2D.OverlapCircleAll(transform.position, explodeRadius));
 		dashing.SetBool ("spinbool", false);
+
     }
 
     public void getBoxCast()

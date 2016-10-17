@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour {
         //set a display message
         if (victory)
         {
+            Debug.Log("You won!");
             endui.GetComponentInChildren<Text>().text = "YOU KILLED THEM ALL";
         }
         //score posting
@@ -49,5 +50,19 @@ public class GameController : MonoBehaviour {
     {
         SceneManager.LoadScene("ryantester");
     }
-	
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
